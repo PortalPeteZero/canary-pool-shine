@@ -1,0 +1,169 @@
+{
+  "families": [
+    {
+      "id": "bright-white",
+      "name": "Bright White",
+      "description": "Crystal-clear waters with a sparkling, pristine finish"
+    },
+    {
+      "id": "soft-aqua",
+      "name": "Soft Aqua",
+      "description": "Gentle turquoise tones reminiscent of shallow Caribbean seas"
+    },
+    {
+      "id": "light-blue",
+      "name": "Light Blue",
+      "description": "Classic pool blue with refreshing clarity"
+    },
+    {
+      "id": "classic-blue",
+      "name": "Classic Blue",
+      "description": "Rich, inviting blue waters perfect for Mediterranean settings"
+    },
+    {
+      "id": "deep-blue",
+      "name": "Deep Blue",
+      "description": "Dramatic ocean-depth colours for a bold statement"
+    },
+    {
+      "id": "graphite",
+      "name": "Graphite",
+      "description": "Modern slate tones that reflect the sky beautifully"
+    },
+    {
+      "id": "charcoal",
+      "name": "Charcoal",
+      "description": "Sophisticated dark finish for luxury contemporary pools"
+    }
+  ],
+  "finishes": [
+    {
+      "id": "pearl-white",
+      "family": "bright-white",
+      "finishName": "Pearl White",
+      "swatchColor": "#F8FAFC",
+      "description": "Our purest white finish creates dazzling, crystal-clear water that sparkles under the Canary Islands sun. Ideal for achieving that classic resort look.",
+      "media": []
+    },
+    {
+      "id": "glacier",
+      "family": "bright-white",
+      "finishName": "Glacier",
+      "swatchColor": "#F1F5F9",
+      "description": "A subtle cool undertone gives Glacier its distinctive fresh appearance. Perfect for pools that catch the morning light.",
+      "media": []
+    },
+    {
+      "id": "seafoam",
+      "family": "soft-aqua",
+      "finishName": "Seafoam",
+      "swatchColor": "#CCFBF1",
+      "description": "Soft green-blue tones that evoke the shallow waters around Fuerteventura. Creates a naturally inviting atmosphere.",
+      "media": []
+    },
+    {
+      "id": "aquamarine",
+      "family": "soft-aqua",
+      "finishName": "Aquamarine",
+      "swatchColor": "#99F6E4",
+      "description": "A vibrant yet soothing turquoise that brings tropical paradise vibes to any pool setting.",
+      "media": []
+    },
+    {
+      "id": "maldives",
+      "family": "soft-aqua",
+      "finishName": "Maldives",
+      "swatchColor": "#5EEAD4",
+      "description": "Rich turquoise inspired by the world's most beautiful lagoons. A statement finish for discerning clients.",
+      "media": []
+    },
+    {
+      "id": "sky-blue",
+      "family": "light-blue",
+      "finishName": "Sky Blue",
+      "swatchColor": "#BAE6FD",
+      "description": "Light and airy, Sky Blue mirrors the clear Canarian skies. A timeless choice that suits any architectural style.",
+      "media": []
+    },
+    {
+      "id": "horizon",
+      "family": "light-blue",
+      "finishName": "Horizon",
+      "swatchColor": "#7DD3FC",
+      "description": "Slightly deeper than Sky Blue, Horizon offers excellent visibility and a cheerful, welcoming appearance.",
+      "media": []
+    },
+    {
+      "id": "mediterranean",
+      "family": "classic-blue",
+      "finishName": "Mediterranean",
+      "swatchColor": "#38BDF8",
+      "description": "The quintessential pool colour. Mediterranean creates inviting waters that photograph beautifully in any light.",
+      "media": []
+    },
+    {
+      "id": "aegean",
+      "family": "classic-blue",
+      "finishName": "Aegean",
+      "swatchColor": "#0EA5E9",
+      "description": "Inspired by the Greek islands, Aegean offers rich blue tones perfect for infinity-edge designs.",
+      "media": []
+    },
+    {
+      "id": "cobalt",
+      "family": "classic-blue",
+      "finishName": "Cobalt",
+      "swatchColor": "#0284C7",
+      "description": "A deeper, more saturated blue that creates dramatic visual impact while maintaining excellent clarity.",
+      "media": []
+    },
+    {
+      "id": "ocean",
+      "family": "deep-blue",
+      "finishName": "Ocean",
+      "swatchColor": "#0369A1",
+      "description": "Deep Atlantic tones bring the majesty of the ocean to your pool. Stunning against white architectural elements.",
+      "media": []
+    },
+    {
+      "id": "abyss",
+      "family": "deep-blue",
+      "finishName": "Abyss",
+      "swatchColor": "#075985",
+      "description": "Our deepest blue creates mysterious, lagoon-like waters. Popular for naturalistic pool designs.",
+      "media": []
+    },
+    {
+      "id": "slate",
+      "family": "graphite",
+      "finishName": "Slate",
+      "swatchColor": "#94A3B8",
+      "description": "Modern and sophisticated, Slate creates waters that reflect the sky like a mirror. Excellent for contemporary architecture.",
+      "media": []
+    },
+    {
+      "id": "storm",
+      "family": "graphite",
+      "finishName": "Storm",
+      "swatchColor": "#64748B",
+      "description": "Darker graphite tones for a bold, architectural statement. The water takes on elegant silver hues.",
+      "media": []
+    },
+    {
+      "id": "obsidian",
+      "family": "charcoal",
+      "finishName": "Obsidian",
+      "swatchColor": "#475569",
+      "description": "Near-black finish creating striking, mirror-like waters. A favourite for luxury villas and boutique hotels.",
+      "media": []
+    },
+    {
+      "id": "midnight",
+      "family": "charcoal",
+      "finishName": "Midnight",
+      "swatchColor": "#334155",
+      "description": "Our darkest finish transforms pools into dramatic reflective surfaces. Pairs beautifully with volcanic stone surrounds.",
+      "media": []
+    }
+  ]
+}
