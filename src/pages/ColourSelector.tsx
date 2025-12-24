@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SwatchImage } from "@/components/shared/SwatchImage";
 import finishData from "@/data/finishes.json";
 
@@ -26,7 +25,7 @@ export default function ColourSelector() {
               Water Colour Selector
             </h1>
             <p className="text-lg text-white/75">
-              Choose from seven beautiful colour families to create your ideal pool aesthetic.
+              Explore our complete range of ECO Finish water colours for your pool.
             </p>
           </div>
         </div>
@@ -41,70 +40,34 @@ export default function ColourSelector() {
         </div>
       </section>
 
-      {/* Colour Selector - Light with generous spacing */}
+      {/* All Colours Grid */}
       <section className="py-20 md:py-28">
         <div className="container">
-          <Tabs defaultValue={finishData.families[0].id} className="w-full">
-            <div className="mb-12 overflow-x-auto pb-2">
-              <TabsList className="inline-flex h-auto p-1 bg-surface-light rounded-full border border-border/40">
-                {finishData.families.map((family) => (
-                  <TabsTrigger
-                    key={family.id}
-                    value={family.id}
-                    className="px-4 py-2 text-sm font-medium rounded-full data-[state=active]:bg-foreground data-[state=active]:text-background whitespace-nowrap transition-colors"
-                  >
-                    {family.name}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-            </div>
-
-            {finishData.families.map((family) => {
-              const familyFinishes = finishData.finishes.filter(
-                (f) => f.family === family.id
-              );
-
-              return (
-                <TabsContent key={family.id} value={family.id} className="mt-0">
-                  <div className="mb-10">
-                    <h2 className="text-2xl font-bold text-foreground mb-3">
-                      {family.name}
-                    </h2>
-                    <p className="text-muted-foreground">{family.description}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            {finishData.finishes.map((finish) => (
+              <Link
+                key={finish.id}
+                to={`/colour-selector/${finish.id}`}
+                className="group text-left rounded-xl bg-card border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4"
+                aria-label={`View ${finish.finishName} finish details`}
+              >
+                <SwatchImage
+                  finishId={finish.id}
+                  fallbackColor={finish.swatchColor}
+                  className="aspect-square"
+                  alt={`${finish.finishName} texture swatch`}
+                />
+                <div className="p-4">
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {finish.finishName}
+                    </h3>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
                   </div>
-
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    {familyFinishes.map((finish) => (
-                      <Link
-                        key={finish.id}
-                        to={`/colour-selector/${finish.id}`}
-                        className="group text-left p-5 rounded-xl bg-card border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4"
-                        aria-label={`View ${finish.finishName} finish details`}
-                      >
-                        <SwatchImage
-                          finishId={finish.id}
-                          fallbackColor={finish.swatchColor}
-                          className="aspect-square rounded-lg mb-5 shadow-soft group-hover:shadow-medium transition-shadow"
-                          alt={`${finish.finishName} texture swatch`}
-                        />
-                        <div className="flex items-start justify-between gap-2">
-                          <div>
-                            <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                              {finish.finishName}
-                            </h3>
-                            <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
-                              {finish.description}
-                            </p>
-                          </div>
-                          <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </TabsContent>
-              );
-            })}
-          </Tabs>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </Layout>
