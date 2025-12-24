@@ -8,7 +8,7 @@ import logo from "@/assets/canary-detect-logo.png";
 const navigation = [
   { name: "Home", href: "/" },
   { name: "Why ECO Finish", href: "/why-eco-finish" },
-  { name: "Water Colours", href: "/colour-selector" },
+  { name: "Colour Selection", href: "/colour-selector" },
   { name: "Gallery", href: "/gallery" },
   { name: "How It's Applied", href: "/process" },
   { name: "Contact", href: "/contact" },
