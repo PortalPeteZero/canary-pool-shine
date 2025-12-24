@@ -4,9 +4,9 @@ import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import heroPoolImage from "@/assets/hero-pool.jpg";
-import poolWhiteImage from "@/assets/pool-white.jpg";
-import poolBlueImage from "@/assets/pool-blue.jpg";
-import poolAquaImage from "@/assets/pool-aqua.jpg";
+import galleryGreySteps from "@/assets/gallery-grey-steps.jpg";
+import galleryBarbudaPool from "@/assets/gallery-barbuda-pool.jpg";
+import gallerySandyBeach from "@/assets/gallery-sandy-beach.jpg";
 
 const comparisons = [
   {
@@ -29,19 +29,19 @@ const comparisons = [
 
 const installations = [
   {
-    image: poolBlueImage,
+    image: galleryGreySteps,
     location: "Private Villa – Tenerife",
-    finish: "Ocean Blue",
+    finish: "French Grey",
   },
   {
-    image: poolWhiteImage,
-    location: "Resort Pool – Gran Canaria",
-    finish: "Pearl White",
-  },
-  {
-    image: poolAquaImage,
+    image: galleryBarbudaPool,
     location: "Holiday Home – Lanzarote",
-    finish: "Aqua Marine",
+    finish: "Barbuda",
+  },
+  {
+    image: gallerySandyBeach,
+    location: "Oceanview Property – Gran Canaria",
+    finish: "Sandy Beach",
   },
 ];
 
@@ -247,8 +247,8 @@ export default function Index() {
             </div>
             <div className="order-1 lg:order-2 relative">
               <img 
-                src={poolWhiteImage}
-                alt="Beautiful white finish pool with crystal clear water"
+                src={galleryBarbudaPool}
+                alt="Beautiful ECO Finish pool with crystal clear water"
                 className="aspect-[4/3] w-full rounded-xl object-cover shadow-medium"
                 loading="lazy"
               />
