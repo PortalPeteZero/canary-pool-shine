@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail } from "lucide-react";
+import logo from "@/assets/canary-detect-logo.png";
 
 const navigation = {
   main: [
@@ -28,14 +29,12 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded bg-primary">
-                <span className="text-xl font-bold text-primary-foreground">CD</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-bold uppercase tracking-wide">Canary Detect</span>
-                <span className="text-xs text-white/60 uppercase tracking-wider">ECO Finish Specialists</span>
-              </div>
+            <Link to="/" className="inline-block">
+              <img 
+                src={logo} 
+                alt="Canary Detect - Locate, Detect, Repair" 
+                className="h-10 w-auto brightness-0 invert"
+              />
             </Link>
             <p className="mt-4 text-sm text-white/70 leading-relaxed">
               Premium ECO Finish pool coating installation across all Canary Islands. 
