@@ -12,6 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Layout } from "@/components/layout/Layout";
 import { useToast } from "@/hooks/use-toast";
+import pacificBlueImage from "@/assets/installations/pacific-blue/pacific-blue-1.jpg";
 
 const islands = [
   "Tenerife",
@@ -82,16 +83,26 @@ export default function Contact() {
         />
       </Helmet>
 
-      {/* Hero - Dark, compact */}
-      <section className="bg-navy-900 py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+      {/* Hero with image background */}
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={pacificBlueImage}
+            alt="Beautiful ECO Finish pool"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/85 to-navy-900/70" />
+        </div>
         <div className="container relative">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-3 animate-fade-up">
+              Free Consultation
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
               Get a Free Quote
             </h1>
-            <p className="text-lg text-white/75">
-              Send us your details and we'll be in touch within 24 hours.
+            <p className="text-lg text-white/80 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              Send us your details and we'll be in touch within 24 hours to discuss your pool transformation.
             </p>
           </div>
         </div>
