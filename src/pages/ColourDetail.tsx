@@ -5,6 +5,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { SwatchImage } from "@/components/shared/SwatchImage";
 import finishData from "@/data/finishes.json";
+import { installationImages } from "@/data/installationImages";
 
 export default function ColourDetail() {
   const { finishId } = useParams<{ finishId: string }>();
@@ -105,14 +106,25 @@ export default function ColourDetail() {
             Example Installations
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="aspect-[4/3] rounded-xl bg-secondary flex items-center justify-center border border-border/30"
-              >
-                <span className="text-sm text-muted-foreground">Photo coming soon</span>
-              </div>
-            ))}
+            {installationImages[finish.id] ? (
+              installationImages[finish.id].map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  alt={`${finish.finishName} pool installation ${i + 1}`}
+                  className="aspect-[4/3] rounded-xl object-cover shadow-soft"
+                />
+              ))
+            ) : (
+              [1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="aspect-[4/3] rounded-xl bg-secondary flex items-center justify-center border border-border/30"
+                >
+                  <span className="text-sm text-muted-foreground">Photo coming soon</span>
+                </div>
+              ))
+            )}
           </div>
           <p className="mt-6 text-sm text-muted-foreground">
             Water colour appearance varies based on pool depth, lighting conditions, and surrounding environment.
