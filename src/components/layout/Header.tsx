@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/canary-detect-logo.png";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -35,14 +36,12 @@ export function Header() {
 
       <nav className="container flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-12 w-12 items-center justify-center rounded bg-primary">
-            <span className="text-xl font-bold text-primary-foreground">CD</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-lg font-bold text-foreground uppercase tracking-wide">Canary Detect</span>
-            <span className="text-xs text-muted-foreground uppercase tracking-wider">ECO Finish Specialists</span>
-          </div>
+        <Link to="/" className="flex items-center">
+          <img 
+            src={logo} 
+            alt="Canary Detect - Locate, Detect, Repair" 
+            className="h-10 lg:h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop Navigation */}
