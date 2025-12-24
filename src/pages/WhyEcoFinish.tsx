@@ -3,6 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, Check, Clock, Leaf, Palette, Shield, Sparkles, ThumbsUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
+import spaBeforeAfter from "@/assets/spa-before-after.png";
+import beforeAfter2 from "@/assets/before-after-2.png";
 
 const benefits = [
   {
@@ -214,8 +216,44 @@ export default function WhyEcoFinish() {
         </div>
       </section>
 
-      {/* CTA - Light */}
+      {/* Before & After Section */}
       <section className="py-24 md:py-32">
+        <div className="container">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Real Transformations
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              See the dramatic difference between worn fibreglass surfaces and beautifully restored ECO Finish pools.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-4xl mx-auto">
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <img 
+                src={spaBeforeAfter}
+                alt="Spa before and after ECO Finish restoration"
+                className="w-full object-cover"
+              />
+              <div className="absolute top-4 left-4">
+                <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">Before & After</span>
+              </div>
+            </div>
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <img 
+                src={beforeAfter2}
+                alt="Pool transformation with ECO Finish"
+                className="w-full object-cover"
+              />
+              <div className="absolute top-4 left-4">
+                <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold rounded-full">Before & After</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 md:py-32 bg-surface-light">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
@@ -234,7 +272,7 @@ export default function WhyEcoFinish() {
               </Button>
               <Button asChild variant="outline" size="lg">
                 <Link to="/colour-selector">
-                  Explore Water Colours
+                  Explore Colour Range
                 </Link>
               </Button>
             </div>
