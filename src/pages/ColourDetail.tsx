@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { SwatchImage } from "@/components/shared/SwatchImage";
 import finishData from "@/data/finishes.json";
 
 export default function ColourDetail() {
@@ -64,10 +65,11 @@ export default function ColourDetail() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Large Swatch */}
             <div>
-              <div 
+              <SwatchImage
+                finishId={finish.id}
+                fallbackColor={finish.swatchColor}
                 className="aspect-square rounded-2xl shadow-medium"
-                style={{ backgroundColor: finish.swatchColor }}
-                aria-label={`${finish.finishName} colour swatch`}
+                alt={`${finish.finishName} texture swatch`}
               />
             </div>
 
@@ -135,9 +137,11 @@ export default function ColourDetail() {
                   to={`/colour-selector/${related.id}`}
                   className="group p-4 rounded-xl bg-card border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300"
                 >
-                  <div
+                  <SwatchImage
+                    finishId={related.id}
+                    fallbackColor={related.swatchColor}
                     className="aspect-square rounded-lg mb-4 shadow-soft group-hover:shadow-medium transition-shadow"
-                    style={{ backgroundColor: related.swatchColor }}
+                    alt={`${related.finishName} texture swatch`}
                   />
                   <div className="flex items-center justify-between">
                     <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
