@@ -64,6 +64,9 @@ export default {
           900: "hsl(var(--navy-900))",
           950: "hsl(var(--navy-950))",
         },
+        surface: {
+          light: "hsl(var(--surface-light))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

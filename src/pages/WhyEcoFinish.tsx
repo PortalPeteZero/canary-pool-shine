@@ -57,12 +57,12 @@ export default function WhyEcoFinish() {
         />
       </Helmet>
 
-      {/* Hero */}
-      <section className="bg-navy-900 py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+      {/* Hero - Dark */}
+      <section className="bg-navy-900 py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         <div className="container relative">
           <div className="max-w-3xl">
-            <p className="text-primary font-bold uppercase tracking-wider mb-4">
+            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-4">
               The ECO Finish Advantage
             </p>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -78,26 +78,26 @@ export default function WhyEcoFinish() {
         </div>
       </section>
 
-      {/* Benefits Grid */}
-      <section className="py-20 md:py-28">
+      {/* Benefits Grid - Light */}
+      <section className="py-24 md:py-32">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
               The ECO Finish Advantage
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Every benefit designed to make pool ownership simpler and more enjoyable.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
             {benefits.map((benefit, index) => (
               <div 
                 key={benefit.title}
-                className="p-6 rounded-lg bg-card border border-border shadow-card hover:shadow-medium transition-all duration-300 animate-fade-up"
+                className="p-6 rounded-lg bg-card border border-border/50 shadow-soft animate-fade-up"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
                   <benefit.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">
@@ -112,21 +112,21 @@ export default function WhyEcoFinish() {
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="py-20 md:py-28 bg-secondary">
+      {/* Comparison Table - Subtle light grey */}
+      <section className="py-24 md:py-32 bg-surface-light">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
               ECO Finish vs Traditional Plaster
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               See how ECO Finish compares to conventional pool finishes.
             </p>
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="rounded-lg overflow-hidden shadow-medium bg-card">
-              <div className="grid grid-cols-3 gap-4 p-4 bg-navy-900 text-white font-bold uppercase tracking-wide text-sm">
+            <div className="rounded-xl overflow-hidden shadow-soft bg-card border border-border/50">
+              <div className="grid grid-cols-3 gap-4 p-5 bg-navy-900 text-white font-semibold uppercase tracking-wide text-sm">
                 <div>Feature</div>
                 <div>ECO Finish</div>
                 <div>Traditional Plaster</div>
@@ -134,7 +134,7 @@ export default function WhyEcoFinish() {
               {comparisons.map((row, index) => (
                 <div 
                   key={row.feature}
-                  className={`grid grid-cols-3 gap-4 p-4 ${index % 2 === 0 ? 'bg-card' : 'bg-secondary/50'}`}
+                  className={`grid grid-cols-3 gap-4 p-5 ${index % 2 === 0 ? 'bg-card' : 'bg-surface-light/50'}`}
                 >
                   <div className="font-medium text-foreground">{row.feature}</div>
                   <div className="text-primary font-medium flex items-center gap-2">
@@ -149,14 +149,14 @@ export default function WhyEcoFinish() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 md:py-28">
+      {/* CTA - Light */}
+      <section className="py-24 md:py-32">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
               See ECO Finish in Action
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
               Explore our gallery of completed installations across the Canary Islands, 
               or discover the stunning range of water colours available.
             </p>

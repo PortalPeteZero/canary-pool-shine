@@ -7,59 +7,62 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 220 20% 12%;
+    --foreground: 220 20% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 12%;
+    --card-foreground: 220 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 12%;
+    --popover-foreground: 220 20% 20%;
 
-    --primary: 36 100% 50%;
-    --primary-foreground: 220 20% 12%;
+    --primary: 40 95% 48%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 96%;
-    --secondary-foreground: 220 20% 12%;
+    --secondary: 220 15% 97%;
+    --secondary-foreground: 220 20% 20%;
 
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 12% 97%;
+    --muted-foreground: 220 10% 40%;
 
-    --accent: 36 100% 50%;
-    --accent-foreground: 220 20% 12%;
+    --accent: 195 80% 45%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 36 100% 50%;
+    --border: 220 12% 92%;
+    --input: 220 12% 92%;
+    --ring: 40 95% 48%;
 
     --radius: 0.5rem;
 
-    /* Brand tokens - Orange/Amber */
-    --orange-50: 36 100% 97%;
-    --orange-100: 36 95% 90%;
-    --orange-200: 36 90% 80%;
-    --orange-400: 36 100% 55%;
-    --orange-500: 36 100% 50%;
-    --orange-600: 36 100% 45%;
-    --orange-700: 36 100% 38%;
+    /* Brand tokens - Warm amber (use sparingly) */
+    --orange-50: 40 100% 97%;
+    --orange-100: 40 95% 92%;
+    --orange-200: 40 90% 82%;
+    --orange-400: 40 95% 52%;
+    --orange-500: 40 95% 48%;
+    --orange-600: 40 95% 42%;
+    --orange-700: 40 95% 35%;
 
-    /* Navy/Charcoal for dark surfaces */
+    /* Navy/Charcoal for dark surfaces - use sparingly */
     --navy-800: 220 25% 18%;
     --navy-900: 220 30% 12%;
     --navy-950: 220 35% 8%;
+    
+    /* Light surface */
+    --surface-light: 220 20% 98%;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 30% 12%) 0%, hsl(220 25% 18%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(220 15% 98%) 0%, hsl(220 15% 96%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 99%) 100%);
     
-    /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(220 20% 12% / 0.08);
-    --shadow-medium: 0 8px 30px -6px hsl(220 20% 12% / 0.12);
-    --shadow-glow: 0 0 40px hsl(36 100% 50% / 0.2);
-    --shadow-card: 0 2px 12px -2px hsl(220 20% 12% / 0.06);
+    /* Shadows - softer */
+    --shadow-soft: 0 2px 16px -2px hsl(220 20% 12% / 0.05);
+    --shadow-medium: 0 4px 24px -4px hsl(220 20% 12% / 0.08);
+    --shadow-glow: 0 0 40px hsl(40 95% 48% / 0.15);
+    --shadow-card: 0 1px 8px -1px hsl(220 20% 12% / 0.04);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
