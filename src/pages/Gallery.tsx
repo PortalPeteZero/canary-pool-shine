@@ -104,16 +104,26 @@ export default function Gallery() {
         />
       </Helmet>
 
-      {/* Hero - Dark, compact */}
-      <section className="bg-navy-900 py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+      {/* Hero with image background */}
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={poolBlueImage}
+            alt="ECO Finish pool installation"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/85 to-navy-900/70" />
+        </div>
         <div className="container relative">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-3 animate-fade-up">
+              Real Results
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
               Our Work
             </h1>
-            <p className="text-lg text-white/75">
-              ECO Finish installations across the Canary Islands.
+            <p className="text-lg text-white/80 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              Browse ECO Finish installations across the Canary Islands. See the stunning transformations we've delivered.
             </p>
           </div>
         </div>

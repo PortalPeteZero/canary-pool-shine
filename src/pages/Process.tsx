@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import beforeAfter1 from "@/assets/before-after-1.png";
 import beforeAfter2 from "@/assets/before-after-2.png";
+import processTeamImage from "@/assets/process-team.jpg";
 
 const steps = [
   {
@@ -53,17 +54,26 @@ export default function Process() {
         />
       </Helmet>
 
-      {/* Hero - Dark with gradient */}
-      <section className="relative overflow-hidden bg-navy-900">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-primary/20" />
-        <div className="container relative py-28 md:py-36">
+      {/* Hero with image background */}
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={processTeamImage}
+            alt="ECO Finish application team at work"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/85 to-navy-900/70" />
+        </div>
+        <div className="container relative">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-3 animate-fade-up">
+              Professional Installation
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
               How ECO Finish Is Applied
             </h1>
-            <p className="text-xl text-white/80 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              Our professional thermal spray process ensures a seamless, long-lasting finish 
-              that bonds permanently to your pool surface.
+            <p className="text-lg text-white/80 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              Our thermal spray process ensures a seamless, long-lasting finish that bonds permanently to your pool surface.
             </p>
           </div>
         </div>
