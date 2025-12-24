@@ -3,7 +3,11 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, CheckCircle2, Droplets, PaintBucket, Sparkles, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
-import processTeamImage from "@/assets/process-team.jpg";
+import processApplication from "@/assets/process-application.png";
+import processSprayPool from "@/assets/process-spray-pool.png";
+import processSprayCloseup from "@/assets/process-spray-closeup.png";
+import beforeAfter1 from "@/assets/before-after-1.png";
+import beforeAfter2 from "@/assets/before-after-2.png";
 
 const steps = [
   {
@@ -11,24 +15,28 @@ const steps = [
     icon: Wrench,
     title: "Surface Preparation",
     description: "We thoroughly prepare your pool surface, repairing any damage and creating the ideal base for the ECO Finish application.",
+    image: null,
   },
   {
     number: "02",
     icon: Droplets,
     title: "Primer Application",
     description: "A specialized bonding primer is applied to ensure maximum adhesion between your pool surface and the ECO Finish coating.",
+    image: null,
   },
   {
     number: "03",
     icon: PaintBucket,
     title: "ECO Finish Coating",
-    description: "Your chosen ECO Finish is expertly applied in multiple layers, building up the durable, beautiful surface that will last for years.",
+    description: "Your chosen ECO Finish is expertly applied using a thermal spray process. The coating bonds instantly to the surface, creating a seamless, durable finish.",
+    image: processSprayPool,
   },
   {
     number: "04",
     icon: Sparkles,
     title: "Cure & Fill",
     description: "The finish cures naturally, then we carefully fill your pool and provide maintenance guidance for lasting results.",
+    image: null,
   },
 ];
 
@@ -52,22 +60,60 @@ export default function Process() {
         />
       </Helmet>
 
-      {/* Hero - Dark */}
-      <section className="bg-navy-900 py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
-        <div className="container relative">
+      {/* Hero - Dark with application image */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={processApplication}
+            alt="ECO Finish thermal spray application in progress"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/80 to-transparent" />
+        </div>
+        <div className="container relative py-28 md:py-36">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 animate-fade-up" style={{ animationDelay: "0.1s" }}>
               How ECO Finish Is Applied
             </h1>
-            <p className="text-xl text-white/75">
-              Our professional installation process ensures lasting beauty and durability.
+            <p className="text-xl text-white/80 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+              Our professional thermal spray process ensures a seamless, long-lasting finish 
+              that bonds permanently to your pool surface.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Process Steps - Light with generous spacing */}
+      {/* Application Gallery */}
+      <section className="py-16 md:py-20 bg-surface-light">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <img 
+                src={processSprayCloseup}
+                alt="Close-up of ECO Finish spray gun in action"
+                className="w-full aspect-[4/3] object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-6">
+                <p className="text-white font-medium">Precision Thermal Spray</p>
+                <p className="text-white/70 text-sm">Coating bonds instantly at high temperature</p>
+              </div>
+            </div>
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <img 
+                src={processSprayPool}
+                alt="Technician applying ECO Finish to pool and spa"
+                className="w-full aspect-[4/3] object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-6">
+                <p className="text-white font-medium">Complete Pool Coverage</p>
+                <p className="text-white/70 text-sm">Seamless application to all surfaces</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Process Steps */}
       <section className="py-28 md:py-36">
         <div className="container">
           <div className="max-w-4xl mx-auto">
@@ -105,8 +151,44 @@ export default function Process() {
         </div>
       </section>
 
-      {/* What to Expect - Subtle light grey */}
-      <section className="py-24 md:py-32 bg-surface-light">
+      {/* Before & After Section */}
+      <section className="py-24 md:py-32 bg-navy-900">
+        <div className="container">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+              The Transformation
+            </h2>
+            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+              See the dramatic difference ECO Finish makes on worn fibreglass pools.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <img 
+                src={beforeAfter1}
+                alt="Before and after ECO Finish application on fibreglass pool"
+                className="w-full object-cover"
+              />
+              <div className="absolute top-4 left-4">
+                <span className="px-3 py-1 bg-white/90 text-foreground text-xs font-semibold rounded-full">Before & After</span>
+              </div>
+            </div>
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <img 
+                src={beforeAfter2}
+                alt="Dramatic transformation of peeling pool surface with ECO Finish"
+                className="w-full object-cover"
+              />
+              <div className="absolute top-4 left-4">
+                <span className="px-3 py-1 bg-white/90 text-foreground text-xs font-semibold rounded-full">Before & After</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What to Expect */}
+      <section className="py-24 md:py-32">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -129,8 +211,8 @@ export default function Process() {
             </div>
             <div className="relative">
               <img 
-                src={processTeamImage}
-                alt="Canary Detect team at work on a pool installation"
+                src={processSprayPool}
+                alt="ECO Finish professional application to pool and spa"
                 className="aspect-[4/3] w-full rounded-lg object-cover shadow-medium"
                 loading="lazy"
               />
@@ -139,8 +221,8 @@ export default function Process() {
         </div>
       </section>
 
-      {/* CTA - Light */}
-      <section className="py-24 md:py-32">
+      {/* CTA */}
+      <section className="py-24 md:py-32 bg-surface-light">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
