@@ -6,6 +6,38 @@ import { SwatchImage } from "@/components/shared/SwatchImage";
 import finishData from "@/data/finishes.json";
 
 export default function ColourSelector() {
+  // Separate Brillo Blanco finishes from other finishes
+  const brilloBlancoFinishes = finishData.finishes.filter(
+    (finish) => finish.productLine === "Brillo Blanco"
+  );
+  const otherFinishes = finishData.finishes.filter(
+    (finish) => finish.productLine !== "Brillo Blanco"
+  );
+
+  const FinishCard = ({ finish }: { finish: typeof finishData.finishes[0] }) => (
+    <Link
+      key={finish.id}
+      to={`/colour-selector/${finish.id}`}
+      className="group text-left rounded-xl bg-card border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4"
+      aria-label={`View ${finish.finishName} finish details`}
+    >
+      <SwatchImage
+        finishId={finish.id}
+        fallbackColor={finish.swatchColor}
+        className="aspect-square"
+        alt={`${finish.finishName} texture swatch`}
+      />
+      <div className="p-4">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+            {finish.finishName}
+          </h3>
+          <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+        </div>
+      </div>
+    </Link>
+  );
+
   return (
     <Layout>
       <Helmet>
@@ -44,28 +76,28 @@ export default function ColourSelector() {
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
-            {finishData.finishes.map((finish) => (
-              <Link
-                key={finish.id}
-                to={`/colour-selector/${finish.id}`}
-                className="group text-left rounded-xl bg-card border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4"
-                aria-label={`View ${finish.finishName} finish details`}
-              >
-                <SwatchImage
-                  finishId={finish.id}
-                  fallbackColor={finish.swatchColor}
-                  className="aspect-square"
-                  alt={`${finish.finishName} texture swatch`}
-                />
-                <div className="p-4">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {finish.finishName}
-                    </h3>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
-                  </div>
-                </div>
-              </Link>
+            {otherFinishes.map((finish) => (
+              <FinishCard key={finish.id} finish={finish} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Brillo Blanco Section */}
+      <section className="py-20 md:py-28 bg-muted/30 border-t border-border/30">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Brillo Blanco Colours
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Inspired by the breathtaking landscapes of Europe, this exclusive palette offers nine stunning options, 
+              each boasting a white base that reflects the brilliance of the sun and the serenity of the water.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            {brilloBlancoFinishes.map((finish) => (
+              <FinishCard key={finish.id} finish={finish} />
             ))}
           </div>
         </div>

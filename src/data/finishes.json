@@ -146,6 +146,69 @@
       "productLine": "polyFIBRO",
       "swatchColor": "#6AA88A",
       "description": "Fresh green-blue tones inspired by Cape Verde islands. Creates tropical, lagoon-like waters."
+    },
+    {
+      "id": "blanco-suave",
+      "finishName": "Blanco Suave",
+      "productLine": "Brillo Blanco",
+      "swatchColor": "#E8E8E8",
+      "description": "Soft, creamy elegance inspired by Santorini's whitewashed villages. Creates serene, light-filled waters."
+    },
+    {
+      "id": "bahia-glacial",
+      "finishName": "Bahia Glacial",
+      "productLine": "Brillo Blanco",
+      "swatchColor": "#D8E4EC",
+      "description": "Icy blue base evoking the power of Iceland's glaciers. Creates cool, crystalline pool waters."
+    },
+    {
+      "id": "tropea-sands",
+      "finishName": "Tropea Sands",
+      "productLine": "Brillo Blanco",
+      "swatchColor": "#E4E0D8",
+      "description": "Vibrant warmth inspired by the southern Italian coast. Perfect for Mediterranean-style pools."
+    },
+    {
+      "id": "cala-macarella",
+      "finishName": "Cala Macarella",
+      "productLine": "Brillo Blanco",
+      "swatchColor": "#DCE4E8",
+      "description": "Soft, pale blue embodying the tranquility of the Spanish islands. Peaceful and inviting."
+    },
+    {
+      "id": "rivage-bronze",
+      "finishName": "Rivage Bronze",
+      "productLine": "Brillo Blanco",
+      "swatchColor": "#D4CABE",
+      "description": "Deep, rich bronze reminiscent of the French coastline. Adds a touch of drama and sophistication."
+    },
+    {
+      "id": "baleares-sand",
+      "finishName": "Baleares Sand",
+      "productLine": "Brillo Blanco",
+      "swatchColor": "#E2DED6",
+      "description": "Golden sand tones bringing the warmth and relaxation of the Mediterranean to your pool."
+    },
+    {
+      "id": "mykonos",
+      "finishName": "Mykonos",
+      "productLine": "Brillo Blanco",
+      "swatchColor": "#E6ECF0",
+      "description": "Bright, crisp white base channeling the iconic glamour of the Greek island. Pure and refreshing."
+    },
+    {
+      "id": "mallorca-sand",
+      "finishName": "Mallorca Sand",
+      "productLine": "Brillo Blanco",
+      "swatchColor": "#DED8CE",
+      "description": "Warm Mediterranean sand tones inspired by Mallorca's beautiful beaches. Natural and inviting."
+    },
+    {
+      "id": "mer-cendree",
+      "finishName": "Mer Cendrée",
+      "productLine": "Brillo Blanco",
+      "swatchColor": "#C8CCD0",
+      "description": "Deep, stormy gray base offering a unique twist. Creates sophisticated, moody pool aesthetics."
     }
   ]
 }
