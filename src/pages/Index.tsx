@@ -54,7 +54,7 @@ export default function Index() {
       </Helmet>
 
       {/* Hero Section - Video Background */}
-      <section className="relative min-h-[80vh] md:min-h-[85vh] max-h-[900px] overflow-hidden">
+      <section className="relative min-h-[70vh] md:min-h-[80vh] max-h-[850px] overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video 
@@ -70,7 +70,7 @@ export default function Index() {
           <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/80 to-navy-950/60 md:from-navy-950/90 md:via-navy-900/75 md:to-navy-950/50" />
         </div>
         
-        <div className="container relative h-full flex items-center py-16 md:py-0">
+        <div className="container relative h-full flex items-center py-12 md:py-16 lg:py-20">
           <div className="max-w-2xl">
             <p className="text-primary font-semibold uppercase tracking-wider text-xs sm:text-sm mb-2 md:mb-3 animate-fade-up" style={{ animationDelay: "0.1s" }}>
               ECO Finish Specialists • Canary Islands
