@@ -1,28 +1,11 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
-import { FinishModal } from "@/components/shared/FinishModal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import finishData from "@/data/finishes.json";
 
-interface Finish {
-  id: string;
-  family: string;
-  finishName: string;
-  swatchColor: string;
-  description: string;
-  media: string[];
-}
-
 export default function ColourSelector() {
-  const [selectedFinish, setSelectedFinish] = useState<Finish | null>(null);
-  const [modalOpen, setModalOpen] = useState(false);
-
-  const handleFinishClick = (finish: Finish) => {
-    setSelectedFinish(finish);
-    setModalOpen(true);
-  };
-
   return (
     <Layout>
       <Helmet>
@@ -91,9 +74,9 @@ export default function ColourSelector() {
 
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {familyFinishes.map((finish) => (
-                      <button
+                      <Link
                         key={finish.id}
-                        onClick={() => handleFinishClick(finish)}
+                        to={`/colour-selector/${finish.id}`}
                         className="group text-left p-5 rounded-xl bg-card border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4"
                         aria-label={`View ${finish.finishName} finish details`}
                       >
@@ -102,13 +85,18 @@ export default function ColourSelector() {
                           style={{ backgroundColor: finish.swatchColor }}
                           aria-hidden="true"
                         />
-                        <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {finish.finishName}
-                        </h3>
-                        <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
-                          {finish.description}
-                        </p>
-                      </button>
+                        <div className="flex items-start justify-between gap-2">
+                          <div>
+                            <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                              {finish.finishName}
+                            </h3>
+                            <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed">
+                              {finish.description}
+                            </p>
+                          </div>
+                          <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
+                        </div>
+                      </Link>
                     ))}
                   </div>
                 </TabsContent>
@@ -117,12 +105,6 @@ export default function ColourSelector() {
           </Tabs>
         </div>
       </section>
-
-      <FinishModal
-        finish={selectedFinish}
-        open={modalOpen}
-        onOpenChange={setModalOpen}
-      />
     </Layout>
   );
 }
