@@ -3,9 +3,10 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, CheckCircle2, Droplets, PaintBucket, Sparkles, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
-import processApplication from "@/assets/process-application.png";
-import processSprayPool from "@/assets/process-spray-pool.png";
-import processSprayCloseup from "@/assets/process-spray-closeup.png";
+import applyThermal from "@/assets/apply-thermal.jpg";
+import applyPrimer from "@/assets/apply-primer.jpg";
+import applySteps from "@/assets/apply-steps.jpg";
+import applyWall from "@/assets/apply-wall.jpg";
 import beforeAfter1 from "@/assets/before-after-1.png";
 import beforeAfter2 from "@/assets/before-after-2.png";
 
@@ -15,28 +16,24 @@ const steps = [
     icon: Wrench,
     title: "Surface Preparation",
     description: "We thoroughly prepare your pool surface, repairing any damage and creating the ideal base for the ECO Finish application.",
-    image: null,
   },
   {
     number: "02",
     icon: Droplets,
     title: "Primer Application",
     description: "A specialized bonding primer is applied to ensure maximum adhesion between your pool surface and the ECO Finish coating.",
-    image: null,
   },
   {
     number: "03",
     icon: PaintBucket,
     title: "ECO Finish Coating",
     description: "Your chosen ECO Finish is expertly applied using a thermal spray process. The coating bonds instantly to the surface, creating a seamless, durable finish.",
-    image: processSprayPool,
   },
   {
     number: "04",
     icon: Sparkles,
     title: "Cure & Fill",
     description: "The finish cures naturally, then we carefully fill your pool and provide maintenance guidance for lasting results.",
-    image: null,
   },
 ];
 
@@ -64,7 +61,7 @@ export default function Process() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src={processApplication}
+            src={applyThermal}
             alt="ECO Finish thermal spray application in progress"
             className="w-full h-full object-cover"
           />
@@ -86,27 +83,45 @@ export default function Process() {
       {/* Application Gallery */}
       <section className="py-16 md:py-20 bg-surface-light">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-            <div className="relative rounded-xl overflow-hidden shadow-medium">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            <div className="relative rounded-xl overflow-hidden shadow-medium group">
               <img 
-                src={processSprayCloseup}
-                alt="Close-up of ECO Finish spray gun in action"
-                className="w-full aspect-[4/3] object-cover"
+                src={applyPrimer}
+                alt="Applying primer coat to pool surface"
+                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-6">
-                <p className="text-white font-medium">Precision Thermal Spray</p>
-                <p className="text-white/70 text-sm">Coating bonds instantly at high temperature</p>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-4">
+                <p className="text-white text-sm font-medium">Primer Application</p>
               </div>
             </div>
-            <div className="relative rounded-xl overflow-hidden shadow-medium">
+            <div className="relative rounded-xl overflow-hidden shadow-medium group">
               <img 
-                src={processSprayPool}
-                alt="Technician applying ECO Finish to pool and spa"
-                className="w-full aspect-[4/3] object-cover"
+                src={applyWall}
+                alt="Thermal spray application on pool wall"
+                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-6">
-                <p className="text-white font-medium">Complete Pool Coverage</p>
-                <p className="text-white/70 text-sm">Seamless application to all surfaces</p>
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-4">
+                <p className="text-white text-sm font-medium">Wall Coating</p>
+              </div>
+            </div>
+            <div className="relative rounded-xl overflow-hidden shadow-medium group">
+              <img 
+                src={applyThermal}
+                alt="Thermal spray showing colour transformation"
+                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-4">
+                <p className="text-white text-sm font-medium">Thermal Spray</p>
+              </div>
+            </div>
+            <div className="relative rounded-xl overflow-hidden shadow-medium group">
+              <img 
+                src={applySteps}
+                alt="Finishing pool steps with ECO Finish"
+                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-4">
+                <p className="text-white text-sm font-medium">Steps & Details</p>
               </div>
             </div>
           </div>
@@ -211,8 +226,8 @@ export default function Process() {
             </div>
             <div className="relative">
               <img 
-                src={processSprayPool}
-                alt="ECO Finish professional application to pool and spa"
+                src={applyWall}
+                alt="ECO Finish professional application to pool wall"
                 className="aspect-[4/3] w-full rounded-lg object-cover shadow-medium"
                 loading="lazy"
               />
