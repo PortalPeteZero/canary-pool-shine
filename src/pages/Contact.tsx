@@ -83,14 +83,17 @@ export default function Contact() {
       </Helmet>
 
       {/* Hero */}
-      <section className="gradient-hero py-20 md:py-28 relative overflow-hidden">
+      <section className="bg-navy-900 py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         <div className="container relative">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+            <p className="text-primary font-bold uppercase tracking-wider mb-4">
+              Get in Touch
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Get a Free Quote
             </h1>
-            <p className="text-xl text-cyan-100 leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed">
               Ready to transform your pool? Send us your details and we'll be in touch 
               within 24 hours to discuss your ECO Finish options.
             </p>
@@ -110,11 +113,11 @@ export default function Contact() {
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Location</h3>
+                    <h3 className="font-bold text-foreground mb-1">Location</h3>
                     <p className="text-muted-foreground">
                       Serving all Canary Islands
                     </p>
@@ -122,49 +125,49 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                     <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                    <h3 className="font-bold text-foreground mb-1">Phone</h3>
                     <a 
-                      href="tel:+34600000000"
-                      className="text-primary hover:text-primary/80 transition-colors"
+                      href="tel:+34646022695"
+                      className="text-primary hover:text-orange-600 transition-colors"
                     >
-                      +34 600 000 000
+                      +34 646 02 26 95
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                    <h3 className="font-bold text-foreground mb-1">Email</h3>
                     <a 
-                      href="mailto:info@canarydetect.com"
-                      className="text-primary hover:text-primary/80 transition-colors"
+                      href="mailto:info@canary-detect.com"
+                      className="text-primary hover:text-orange-600 transition-colors"
                     >
-                      info@canarydetect.com
+                      info@canary-detect.com
                     </a>
                   </div>
                 </div>
               </div>
 
-              <div className="mt-10 p-6 rounded-2xl bg-secondary/50">
-                <h3 className="font-semibold text-foreground mb-3">What happens next?</h3>
+              <div className="mt-10 p-6 rounded-lg bg-secondary border border-border">
+                <h3 className="font-bold text-foreground mb-3">What happens next?</h3>
                 <ol className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
                     We'll review your enquiry within 24 hours
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
                     We'll arrange a free on-site consultation
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                    <span className="w-5 h-5 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
                     You'll receive a detailed, no-obligation quote
                   </li>
                 </ol>
@@ -173,7 +176,7 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="p-8 rounded-2xl bg-card shadow-card">
+              <div className="p-8 rounded-lg bg-card border border-border shadow-card">
                 {isSubmitted ? (
                   <div className="text-center py-12">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
@@ -333,7 +336,7 @@ export default function Contact() {
                           )}
                         />
 
-                        <Button type="submit" variant="hero" size="lg" className="w-full sm:w-auto">
+                        <Button type="submit" size="lg" className="w-full sm:w-auto">
                           Send Enquiry
                           <Send className="ml-2 h-4 w-4" />
                         </Button>

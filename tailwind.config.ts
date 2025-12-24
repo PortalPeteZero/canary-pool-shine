@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        sans: ['Montserrat', 'system-ui', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -50,20 +50,19 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        cyan: {
-          50: "hsl(var(--cyan-50))",
-          100: "hsl(var(--cyan-100))",
-          200: "hsl(var(--cyan-200))",
-          500: "hsl(var(--cyan-500))",
-          600: "hsl(var(--cyan-600))",
-          700: "hsl(var(--cyan-700))",
-          800: "hsl(var(--cyan-800))",
-          900: "hsl(var(--cyan-900))",
+        orange: {
+          50: "hsl(var(--orange-50))",
+          100: "hsl(var(--orange-100))",
+          200: "hsl(var(--orange-200))",
+          400: "hsl(var(--orange-400))",
+          500: "hsl(var(--orange-500))",
+          600: "hsl(var(--orange-600))",
+          700: "hsl(var(--orange-700))",
         },
-        yellow: {
-          400: "hsl(var(--yellow-400))",
-          500: "hsl(var(--yellow-500))",
-          600: "hsl(var(--yellow-600))",
+        navy: {
+          800: "hsl(var(--navy-800))",
+          900: "hsl(var(--navy-900))",
+          950: "hsl(var(--navy-950))",
         },
       },
       borderRadius: {

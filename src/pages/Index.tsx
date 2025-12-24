@@ -55,23 +55,23 @@ export default function Index() {
             alt="Luxury pool in Canary Islands with crystal clear turquoise water"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-900/90 via-cyan-800/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/80 to-transparent" />
         </div>
         <div className="container relative py-24 md:py-32 lg:py-40">
           <div className="max-w-3xl">
-            <p className="text-cyan-100 font-medium mb-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <p className="text-primary font-bold uppercase tracking-wider mb-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
               ECO Finish Specialists • Canary Islands
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               Transform Your Pool with Lasting Beauty
             </h1>
-            <p className="text-xl text-cyan-100 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <p className="text-xl text-white/80 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
               ECO Finish creates stunning, durable pool surfaces that last 15+ years. 
               Choose from seven beautiful water colour families and enjoy a finish 
               that's smooth, stain-resistant, and built for island living.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <Button asChild variant="accent" size="xl">
+              <Button asChild size="xl">
                 <Link to="/contact">
                   Get a Free Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -112,13 +112,13 @@ export default function Index() {
             {features.map((feature, index) => (
               <div 
                 key={feature.title}
-                className="group p-6 rounded-2xl gradient-card shadow-card hover:shadow-medium transition-all duration-300 animate-fade-up"
+                className="group p-6 rounded-lg bg-card border border-border shadow-card hover:shadow-medium transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-bold text-foreground mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -131,7 +131,7 @@ export default function Index() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 md:py-28 gradient-subtle">
+      <section className="py-20 md:py-28 bg-secondary">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -146,16 +146,16 @@ export default function Index() {
               <ul className="space-y-4 mb-8">
                 {benefits.map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
-                      <svg className="w-3.5 h-3.5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                      <svg className="w-3.5 h-3.5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="text-foreground">{benefit}</span>
+                    <span className="text-foreground font-medium">{benefit}</span>
                   </li>
                 ))}
               </ul>
-              <Button asChild variant="hero" size="lg">
+              <Button asChild size="lg">
                 <Link to="/why-eco-finish">
                   Learn More About ECO Finish
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -166,11 +166,11 @@ export default function Index() {
               <img 
                 src={poolWhiteImage}
                 alt="Beautiful white finish pool with crystal clear water"
-                className="aspect-[4/3] w-full rounded-2xl object-cover shadow-medium"
+                className="aspect-[4/3] w-full rounded-lg object-cover shadow-medium"
                 loading="lazy"
               />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/20 rounded-2xl -z-10" />
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 rounded-2xl -z-10" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-lg -z-10" />
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-navy-900/10 rounded-lg -z-10" />
             </div>
           </div>
         </div>
@@ -179,17 +179,17 @@ export default function Index() {
       {/* CTA Section */}
       <section className="py-20 md:py-28">
         <div className="container">
-          <div className="rounded-3xl gradient-hero p-12 md:p-16 text-center relative overflow-hidden">
+          <div className="rounded-lg bg-navy-900 p-12 md:p-16 text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Ready to Transform Your Pool?
               </h2>
-              <p className="text-lg text-cyan-100 mb-8">
+              <p className="text-lg text-white/70 mb-8">
                 Get a free, no-obligation quote for your ECO Finish installation. 
                 We serve all seven Canary Islands.
               </p>
-              <Button asChild variant="accent" size="xl">
+              <Button asChild size="xl">
                 <Link to="/contact">
                   Request Your Free Quote
                   <ArrowRight className="ml-2 h-5 w-5" />
