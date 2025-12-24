@@ -10,12 +10,11 @@ export default function ColourDetail() {
   const { finishId } = useParams<{ finishId: string }>();
   
   const finish = finishData.finishes.find((f) => f.id === finishId);
-  const family = finishData.families.find((f) => f.id === finish?.family);
   
-  // Get related finishes from the same family
+  // Get related finishes from the same product line
   const relatedFinishes = finishData.finishes.filter(
-    (f) => f.family === finish?.family && f.id !== finishId
-  );
+    (f) => f.productLine === finish?.productLine && f.id !== finishId
+  ).slice(0, 4);
 
   if (!finish) {
     return (
@@ -75,11 +74,9 @@ export default function ColourDetail() {
 
             {/* Details */}
             <div className="flex flex-col justify-center">
-              {family && (
-                <span className="text-sm font-medium text-primary mb-2">
-                  {family.name} Family
-                </span>
-              )}
+              <span className="text-sm font-medium text-primary mb-2">
+                {finish.productLine}
+              </span>
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
                 {finish.finishName}
               </h1>
@@ -128,7 +125,7 @@ export default function ColourDetail() {
         <section className="py-12 md:py-20">
           <div className="container">
             <h2 className="text-2xl font-bold text-foreground mb-8">
-              More from {family?.name}
+              More from {finish.productLine}
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {relatedFinishes.map((related) => (
