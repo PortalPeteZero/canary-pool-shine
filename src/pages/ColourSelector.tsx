@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { SwatchImage } from "@/components/shared/SwatchImage";
 import finishData from "@/data/finishes.json";
 
 export default function ColourSelector() {
@@ -80,10 +81,11 @@ export default function ColourSelector() {
                         className="group text-left p-5 rounded-xl bg-card border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4"
                         aria-label={`View ${finish.finishName} finish details`}
                       >
-                        <div
+                        <SwatchImage
+                          finishId={finish.id}
+                          fallbackColor={finish.swatchColor}
                           className="aspect-square rounded-lg mb-5 shadow-soft group-hover:shadow-medium transition-shadow"
-                          style={{ backgroundColor: finish.swatchColor }}
-                          aria-hidden="true"
+                          alt={`${finish.finishName} texture swatch`}
                         />
                         <div className="flex items-start justify-between gap-2">
                           <div>
