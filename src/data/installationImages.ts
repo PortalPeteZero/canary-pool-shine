@@ -110,6 +110,21 @@ import balearesSand3 from "@/assets/installations/baleares-sand/baleares-sand-3.
 import blancoSuave1 from "@/assets/installations/blanco-suave/blanco-suave-1.jpg";
 import blancoSuave2 from "@/assets/installations/blanco-suave/blanco-suave-2.jpg";
 
+// Brillo Blanco - Cala Macarella
+import calaMacarella1 from "@/assets/installations/cala-macarella/cala-macarella-1.jpg";
+import calaMacarella2 from "@/assets/installations/cala-macarella/cala-macarella-2.jpg";
+import calaMacarella3 from "@/assets/installations/cala-macarella/cala-macarella-3.jpg";
+
+// Brillo Blanco - Mallorca Sand
+import mallorcaSand1 from "@/assets/installations/mallorca-sand/mallorca-sand-1.jpg";
+import mallorcaSand2 from "@/assets/installations/mallorca-sand/mallorca-sand-2.jpg";
+import mallorcaSand3 from "@/assets/installations/mallorca-sand/mallorca-sand-3.jpg";
+
+// Brillo Blanco - Mer Cendrée
+import merCendree1 from "@/assets/installations/mer-cendree/mer-cendree-1.jpg";
+import merCendree2 from "@/assets/installations/mer-cendree/mer-cendree-2.jpg";
+import merCendree3 from "@/assets/installations/mer-cendree/mer-cendree-3.jpg";
+
 export const installationImages: Record<string, string[]> = {
   barbuda: [barbuda1, barbuda2, barbuda3],
   "black-absinthe": [blackAbsinthe1, blackAbsinthe2, blackAbsinthe3],
@@ -134,4 +149,7 @@ export const installationImages: Record<string, string[]> = {
   "bahia-glacial": [bahiaGlacial1, bahiaGlacial2, bahiaGlacial3],
   "baleares-sand": [balearesSand1, balearesSand2, balearesSand3],
   "blanco-suave": [blancoSuave1, blancoSuave2],
+  "cala-macarella": [calaMacarella1, calaMacarella2, calaMacarella3],
+  "mallorca-sand": [mallorcaSand1, mallorcaSand2, mallorcaSand3],
+  "mer-cendree": [merCendree1, merCendree2, merCendree3],
 };
