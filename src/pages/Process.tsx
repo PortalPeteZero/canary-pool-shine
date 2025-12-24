@@ -80,15 +80,15 @@ export default function Process() {
       </section>
 
       {/* Application Videos */}
-      <section className="py-16 md:py-20 bg-surface-light">
+      <section className="py-10 md:py-16 lg:py-20 bg-surface-light">
         <div className="container">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+          <div className="text-center mb-6 md:mb-10">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-foreground mb-2 md:mb-3">
               Watch the Process
             </h2>
-            <p className="text-muted-foreground">See ECO Finish application in action</p>
+            <p className="text-sm md:text-base text-muted-foreground">See ECO Finish application in action</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
             <div className="relative rounded-xl overflow-hidden shadow-medium">
               <video 
                 src="/videos/apply-primer.mov"
@@ -96,8 +96,8 @@ export default function Process() {
                 playsInline
                 className="w-full aspect-video object-cover"
               />
-              <div className="p-4 bg-background">
-                <p className="text-foreground font-medium">Primer Application</p>
+              <div className="p-3 md:p-4 bg-background">
+                <p className="text-sm md:text-base text-foreground font-medium">Primer Application</p>
               </div>
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-medium">
@@ -107,8 +107,8 @@ export default function Process() {
                 playsInline
                 className="w-full aspect-video object-cover"
               />
-              <div className="p-4 bg-background">
-                <p className="text-foreground font-medium">Wall Coating</p>
+              <div className="p-3 md:p-4 bg-background">
+                <p className="text-sm md:text-base text-foreground font-medium">Wall Coating</p>
               </div>
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-medium">
@@ -118,8 +118,8 @@ export default function Process() {
                 playsInline
                 className="w-full aspect-video object-cover"
               />
-              <div className="p-4 bg-background">
-                <p className="text-foreground font-medium">Thermal Spray</p>
+              <div className="p-3 md:p-4 bg-background">
+                <p className="text-sm md:text-base text-foreground font-medium">Thermal Spray</p>
               </div>
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-medium">
@@ -129,8 +129,8 @@ export default function Process() {
                 playsInline
                 className="w-full aspect-video object-cover"
               />
-              <div className="p-4 bg-background">
-                <p className="text-foreground font-medium">Steps & Details</p>
+              <div className="p-3 md:p-4 bg-background">
+                <p className="text-sm md:text-base text-foreground font-medium">Steps & Details</p>
               </div>
             </div>
           </div>
@@ -138,34 +138,34 @@ export default function Process() {
       </section>
 
       {/* Process Steps */}
-      <section className="py-28 md:py-36">
+      <section className="py-12 md:py-20 lg:py-28">
         <div className="container">
           <div className="max-w-4xl mx-auto">
             {steps.map((step, index) => (
               <div 
                 key={step.number}
-                className="relative flex flex-col md:flex-row gap-10 mb-24 last:mb-0 animate-fade-up"
+                className="relative flex flex-row gap-4 md:gap-8 lg:gap-10 mb-8 md:mb-16 lg:mb-24 last:mb-0 animate-fade-up"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
                 {/* Connector Line */}
                 {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute left-[2.75rem] top-24 bottom-0 w-px bg-gradient-to-b from-border/60 to-transparent" />
+                  <div className="absolute left-[1.75rem] md:left-[2.5rem] top-16 md:top-20 bottom-0 w-px bg-gradient-to-b from-border/60 to-transparent" />
                 )}
 
-                {/* Step Number */}
+                {/* Step Icon */}
                 <div className="shrink-0">
-                  <div className="w-20 h-20 rounded-xl bg-surface-light border border-border/40 flex items-center justify-center shadow-card">
-                    <step.icon className="h-7 w-7 text-primary" />
+                  <div className="w-14 h-14 md:w-20 md:h-20 rounded-xl bg-surface-light border border-border/40 flex items-center justify-center shadow-card">
+                    <step.icon className="h-5 w-5 md:h-7 md:w-7 text-primary" />
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 pt-2">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-sm font-medium text-primary">{step.number}</span>
-                    <h2 className="text-xl font-semibold text-foreground">{step.title}</h2>
+                <div className="flex-1 pt-1 md:pt-2">
+                  <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+                    <span className="text-xs md:text-sm font-medium text-primary">{step.number}</span>
+                    <h2 className="text-lg md:text-xl font-semibold text-foreground">{step.title}</h2>
                   </div>
-                  <p className="text-muted-foreground">
+                  <p className="text-sm md:text-base text-muted-foreground">
                     {step.description}
                   </p>
                 </div>
@@ -176,25 +176,25 @@ export default function Process() {
       </section>
 
       {/* Before & After Section */}
-      <section className="py-24 md:py-32 bg-navy-900">
+      <section className="py-12 md:py-20 lg:py-28 bg-navy-900">
         <div className="container">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+          <div className="text-center mb-8 md:mb-14">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-5">
               The Transformation
             </h2>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-white/70 max-w-2xl mx-auto">
               See the dramatic difference ECO Finish makes on worn fibreglass pools.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 lg:gap-12">
             <div className="relative rounded-xl overflow-hidden shadow-medium">
               <img 
                 src={beforeAfter1}
                 alt="Before and after ECO Finish application on fibreglass pool"
                 className="w-full object-cover"
               />
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-white/90 text-foreground text-xs font-semibold rounded-full">Before & After</span>
+              <div className="absolute top-3 left-3 md:top-4 md:left-4">
+                <span className="px-2 py-1 md:px-3 md:py-1 bg-white/90 text-foreground text-xs font-semibold rounded-full">Before & After</span>
               </div>
             </div>
             <div className="relative rounded-xl overflow-hidden shadow-medium">
@@ -203,8 +203,8 @@ export default function Process() {
                 alt="Dramatic transformation of peeling pool surface with ECO Finish"
                 className="w-full object-cover"
               />
-              <div className="absolute top-4 left-4">
-                <span className="px-3 py-1 bg-white/90 text-foreground text-xs font-semibold rounded-full">Before & After</span>
+              <div className="absolute top-3 left-3 md:top-4 md:left-4">
+                <span className="px-2 py-1 md:px-3 md:py-1 bg-white/90 text-foreground text-xs font-semibold rounded-full">Before & After</span>
               </div>
             </div>
           </div>
@@ -212,33 +212,33 @@ export default function Process() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-24 md:py-32">
+      <section className="py-12 md:py-20 lg:py-28">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4 md:mb-6">
                 What to Expect
               </h2>
-              <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+              <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-10 leading-relaxed">
                 From your first enquiry to swimming in your transformed pool, 
                 we make the entire process smooth and stress-free. Most residential 
                 installations are completed within 2-3 days.
               </p>
-              <ul className="space-y-5">
+              <ul className="space-y-3 md:space-y-5">
                 {expectations.map((item) => (
-                  <li key={item} className="flex items-start gap-4">
-                    <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
-                    <span className="text-foreground">{item}</span>
+                  <li key={item} className="flex items-start gap-3 md:gap-4">
+                    <CheckCircle2 className="h-5 w-5 md:h-6 md:w-6 text-primary shrink-0 mt-0.5" />
+                    <span className="text-sm md:text-base text-foreground">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="relative rounded-xl overflow-hidden shadow-medium">
+            <div className="relative rounded-xl overflow-hidden shadow-medium order-1 lg:order-2">
               <video 
                 src="/videos/apply-wall.mov"
                 controls
                 playsInline
-                className="w-full aspect-[4/3] object-cover"
+                className="w-full aspect-video lg:aspect-[4/3] object-cover"
               />
             </div>
           </div>
@@ -246,20 +246,20 @@ export default function Process() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 md:py-32 bg-surface-light">
+      <section className="py-12 md:py-20 lg:py-28 bg-surface-light">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+          <div className="text-center max-w-2xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-5">
               Ready to Get Started?
             </h2>
-            <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
+            <p className="text-base md:text-lg text-muted-foreground mb-6 md:mb-10 leading-relaxed">
               Contact us today for a free consultation. We'll assess your pool, 
               discuss colour options, and provide a detailed quote.
             </p>
-            <Button asChild size="xl">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link to="/contact">
                 Request a Free Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5" />
               </Link>
             </Button>
           </div>

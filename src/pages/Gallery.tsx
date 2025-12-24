@@ -129,16 +129,16 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Filters - Minimal, understated */}
-      <section className="py-5 border-b border-border/30">
+      {/* Filters - Mobile scrollable */}
+      <section className="py-4 border-b border-border/30 overflow-x-auto">
         <div className="container">
-          <div className="flex flex-wrap gap-2">
+          <div className="flex gap-2 min-w-max">
             <button
               onClick={() => setActiveFilter("all")}
-              className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeFilter === "all"
                   ? "bg-foreground text-background"
-                  : "text-muted-foreground hover:text-foreground"
+                  : "text-muted-foreground hover:text-foreground bg-surface-light"
               }`}
             >
               All
@@ -147,10 +147,10 @@ export default function Gallery() {
               <button
                 key={productLine}
                 onClick={() => setActiveFilter(productLine)}
-                className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
                   activeFilter === productLine
                     ? "bg-foreground text-background"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-foreground bg-surface-light"
                 }`}
               >
                 {productLine}
@@ -160,11 +160,11 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Gallery Grid - Image-dominant, generous spacing */}
-      <section className="py-16 md:py-24">
+      {/* Gallery Grid - Responsive */}
+      <section className="py-10 md:py-16 lg:py-24">
         <div className="container">
           {filteredItems.length > 0 ? (
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
               {filteredItems.map((item, index) => (
                 <button
                   key={item.id}
@@ -173,7 +173,7 @@ export default function Gallery() {
                   style={{ animationDelay: `${0.05 * (index + 1)}s` }}
                   aria-label={`View ${item.title} details`}
                 >
-                  <div className="aspect-[4/3] overflow-hidden rounded-xl mb-5">
+                  <div className="aspect-[4/3] overflow-hidden rounded-xl mb-4">
                     <img 
                       src={item.image}
                       alt={`${item.finish} finish pool in ${item.location}`}
@@ -193,14 +193,14 @@ export default function Gallery() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-24">
+            <div className="text-center py-16 md:py-24">
               <p className="text-muted-foreground">
                 No installations found for this colour family yet.
               </p>
             </div>
           )}
 
-          <p className="mt-20 text-center text-xs text-muted-foreground">
+          <p className="mt-12 md:mt-20 text-center text-xs text-muted-foreground">
             Water colour appearance varies based on pool depth, lighting conditions, and surrounding environment.
           </p>
         </div>

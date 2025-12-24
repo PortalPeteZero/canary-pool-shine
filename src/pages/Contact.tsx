@@ -109,52 +109,52 @@ export default function Contact() {
       </section>
 
       {/* Contact Content - Light */}
-      <section className="py-24 md:py-32">
+      <section className="py-10 md:py-16 lg:py-24">
         <div className="container">
-          <div className="grid lg:grid-cols-3 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
             {/* Contact Info */}
-            <div className="lg:col-span-1">
-              <h2 className="text-2xl font-bold text-foreground mb-8">
+            <div className="lg:col-span-1 order-2 lg:order-1">
+              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8">
                 Contact Information
               </h2>
               
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <MapPin className="h-5 w-5 text-primary" />
+              <div className="space-y-5 md:space-y-8">
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <MapPin className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Location</h3>
-                    <p className="text-muted-foreground">
+                    <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">Location</h3>
+                    <p className="text-sm md:text-base text-muted-foreground">
                       Serving all Canary Islands
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Phone className="h-5 w-5 text-primary" />
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <Phone className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                    <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">Phone</h3>
                     <a 
                       href="tel:+34646022695"
-                      className="text-foreground hover:text-primary transition-colors"
+                      className="text-sm md:text-base text-foreground hover:text-primary transition-colors"
                     >
                       +34 646 02 26 95
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <Mail className="h-5 w-5 text-primary" />
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                    <Mail className="h-4 w-4 md:h-5 md:w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
+                    <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">Email</h3>
                     <a 
                       href="mailto:info@canary-detect.com"
-                      className="text-foreground hover:text-primary transition-colors"
+                      className="text-sm md:text-base text-foreground hover:text-primary transition-colors break-all"
                     >
                       info@canary-detect.com
                     </a>
@@ -162,19 +162,19 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-14 p-6 rounded-xl bg-surface-light border border-border/40">
-                <h3 className="font-semibold text-foreground mb-4">What happens next?</h3>
-                <ol className="space-y-4 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center shrink-0 mt-0.5">1</span>
+              <div className="mt-8 md:mt-14 p-4 md:p-6 rounded-xl bg-surface-light border border-border/40">
+                <h3 className="font-semibold text-foreground mb-3 md:mb-4 text-sm md:text-base">What happens next?</h3>
+                <ol className="space-y-3 md:space-y-4 text-xs md:text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2 md:gap-3">
+                    <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center shrink-0 mt-0.5">1</span>
                     We'll review your enquiry within 24 hours
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                  <li className="flex items-start gap-2 md:gap-3">
+                    <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center shrink-0 mt-0.5">2</span>
                     We'll arrange a free on-site consultation
                   </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                  <li className="flex items-start gap-2 md:gap-3">
+                    <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center shrink-0 mt-0.5">3</span>
                     You'll receive a detailed, no-obligation quote
                   </li>
                 </ol>
@@ -182,33 +182,33 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <div className="p-8 md:p-12 rounded-xl bg-card border border-border/40 shadow-card">
+            <div className="lg:col-span-2 order-1 lg:order-2">
+              <div className="p-5 md:p-8 lg:p-12 rounded-xl bg-card border border-border/40 shadow-card">
                 {isSubmitted ? (
-                  <div className="text-center py-16">
-                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                      <CheckCircle2 className="h-8 w-8 text-primary" />
+                  <div className="text-center py-10 md:py-16">
+                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 md:mb-6">
+                      <CheckCircle2 className="h-7 w-7 md:h-8 md:w-8 text-primary" />
                     </div>
-                    <h2 className="text-2xl font-bold text-foreground mb-3">
+                    <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2 md:mb-3">
                       Thank You!
                     </h2>
-                    <p className="text-muted-foreground mb-8">
+                    <p className="text-sm md:text-base text-muted-foreground mb-6 md:mb-8">
                       Your enquiry has been received. We'll be in touch within 24 hours 
                       to discuss your ECO Finish options.
                     </p>
-                    <Button onClick={() => setIsSubmitted(false)} variant="outline">
+                    <Button onClick={() => setIsSubmitted(false)} variant="outline" size="default">
                       Send Another Enquiry
                     </Button>
                   </div>
                 ) : (
                   <>
-                    <h2 className="text-2xl font-bold text-foreground mb-8">
+                    <h2 className="text-xl md:text-2xl font-bold text-foreground mb-5 md:mb-8">
                       Send Us Your Details
                     </h2>
                     
                     <Form {...form}>
-                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                        <div className="grid sm:grid-cols-2 gap-6">
+                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                           <FormField
                             control={form.control}
                             name="name"
@@ -238,7 +238,7 @@ export default function Contact() {
                           />
                         </div>
 
-                        <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                           <FormField
                             control={form.control}
                             name="phone"
