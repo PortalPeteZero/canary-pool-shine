@@ -46,6 +46,21 @@ import greyReef1 from "@/assets/installations/grey-reef/grey-reef-1.jpg";
 import greyReef2 from "@/assets/installations/grey-reef/grey-reef-2.jpg";
 import greyReef3 from "@/assets/installations/grey-reef/grey-reef-3.jpg";
 
+// Ice Ice Bay Bay
+import iceIceBayBay1 from "@/assets/installations/ice-ice-bay-bay/ice-ice-bay-bay-1.jpg";
+import iceIceBayBay2 from "@/assets/installations/ice-ice-bay-bay/ice-ice-bay-bay-2.jpg";
+import iceIceBayBay3 from "@/assets/installations/ice-ice-bay-bay/ice-ice-bay-bay-3.jpg";
+
+// Kona Coast
+import konaCoast1 from "@/assets/installations/kona-coast/kona-coast-1.jpg";
+import konaCoast2 from "@/assets/installations/kona-coast/kona-coast-2.jpg";
+import konaCoast3 from "@/assets/installations/kona-coast/kona-coast-3.jpg";
+
+// Marrakesh
+import marrakesh1 from "@/assets/installations/marrakesh/marrakesh-1.jpg";
+import marrakesh2 from "@/assets/installations/marrakesh/marrakesh-2.jpg";
+import marrakesh3 from "@/assets/installations/marrakesh/marrakesh-3.jpg";
+
 export const installationImages: Record<string, string[]> = {
   barbuda: [barbuda1, barbuda2, barbuda3],
   "black-absinthe": [blackAbsinthe1, blackAbsinthe2, blackAbsinthe3],
@@ -56,4 +71,7 @@ export const installationImages: Record<string, string[]> = {
   "french-grey": [frenchGrey1, frenchGrey2, frenchGrey3],
   "giallo-versilia": [gialloVersilia1, gialloVersilia2, gialloVersilia3],
   "grey-reef": [greyReef1, greyReef2, greyReef3],
+  "ice-ice-bay-bay": [iceIceBayBay1, iceIceBayBay2, iceIceBayBay3],
+  "kona-coast": [konaCoast1, konaCoast2, konaCoast3],
+  marrakesh: [marrakesh1, marrakesh2, marrakesh3],
 };
