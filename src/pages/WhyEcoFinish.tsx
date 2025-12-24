@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import spaBeforeAfter from "@/assets/spa-before-after.png";
 import beforeAfter2 from "@/assets/before-after-2.png";
+import applyThermal from "@/assets/apply-thermal.jpg";
+import applyPrimer from "@/assets/apply-primer.jpg";
+import applyWall from "@/assets/apply-wall.jpg";
+import applySteps from "@/assets/apply-steps.jpg";
 
 const benefits = [
   {
@@ -93,9 +97,16 @@ export default function WhyEcoFinish() {
         />
       </Helmet>
 
-      {/* Hero - Dark */}
-      <section className="bg-navy-900 py-20 md:py-28 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+      {/* Hero - Dark with image */}
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src={applyThermal}
+            alt="ECO Finish thermal spray application"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/85 to-navy-900/70" />
+        </div>
         <div className="container relative">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
@@ -143,32 +154,46 @@ export default function WhyEcoFinish() {
         </div>
       </section>
 
-      {/* Understanding the Difference - Intro */}
+      {/* Understanding the Difference - with images */}
       <section className="py-20 md:py-24">
         <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-              Understanding Pool Surface Systems
-            </h2>
-            <div className="space-y-5 text-muted-foreground leading-relaxed">
-              <p>
-                Fibreglass pools are common across the Canary Islands. The fibreglass shell itself is durable, 
-                but the <strong className="text-foreground">gel coat or painted surface</strong> — the visible 
-                finish you swim in — is the wear layer that takes the brunt of UV exposure, chemicals, and daily use.
-              </p>
-              <p>
-                In island conditions, this surface layer typically requires <strong className="text-foreground">repainting 
-                or re-gel-coating every 1–2 years</strong>. Over time, full re-fibreglassing may also be needed. 
-                Each resurfacing means draining and refilling the pool — expensive in the Canaries where water 
-                costs are high — plus 1–2 weeks of downtime.
-              </p>
-              <p>
-                For rental properties, this means lost bookings. For homeowners, it means ongoing expense and disruption.
-              </p>
-              <p className="text-foreground font-medium">
-                ECO Finish offers an alternative: a long-life coating system designed to reduce the frequency 
-                of resurfacing, minimise water waste, and keep your pool in service longer.
-              </p>
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+                Understanding Pool Surface Systems
+              </h2>
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
+                <p>
+                  Fibreglass pools are common across the Canary Islands. The fibreglass shell itself is durable, 
+                  but the <strong className="text-foreground">gel coat or painted surface</strong> — the visible 
+                  finish you swim in — is the wear layer that takes the brunt of UV exposure, chemicals, and daily use.
+                </p>
+                <p>
+                  In island conditions, this surface layer typically requires <strong className="text-foreground">repainting 
+                  or re-gel-coating every 1–2 years</strong>. Over time, full re-fibreglassing may also be needed. 
+                  Each resurfacing means draining and refilling the pool — expensive in the Canaries where water 
+                  costs are high — plus 1–2 weeks of downtime.
+                </p>
+                <p>
+                  For rental properties, this means lost bookings. For homeowners, it means ongoing expense and disruption.
+                </p>
+                <p className="text-foreground font-medium">
+                  ECO Finish offers an alternative: a long-life coating system designed to reduce the frequency 
+                  of resurfacing, minimise water waste, and keep your pool in service longer.
+                </p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <img 
+                src={applyPrimer}
+                alt="Primer application on pool surface"
+                className="rounded-xl shadow-medium object-cover aspect-[3/4]"
+              />
+              <img 
+                src={applySteps}
+                alt="ECO Finish application on pool steps"
+                className="rounded-xl shadow-medium object-cover aspect-[3/4] mt-8"
+              />
             </div>
           </div>
         </div>
