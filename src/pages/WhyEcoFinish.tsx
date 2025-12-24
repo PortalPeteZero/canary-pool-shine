@@ -8,7 +8,7 @@ const benefits = [
   {
     icon: Shield,
     title: "Exceptional Durability",
-    description: "ECO Finish creates a permanent bond with your pool surface, lasting 15+ years without the need for replastering. It resists staining, chemical damage, and the harsh effects of UV exposure.",
+    description: "ECO Finish creates a permanent bond with your pool surface, lasting 10+ years without the need for replastering. It resists staining, chemical damage, and the harsh effects of UV exposure.",
   },
   {
     icon: Palette,
@@ -38,7 +38,7 @@ const benefits = [
 ];
 
 const comparisons = [
-  { feature: "Lifespan", eco: "15+ years", traditional: "5-7 years" },
+  { feature: "Lifespan", eco: "10+ years", traditional: "5-7 years" },
   { feature: "Surface feel", eco: "Smooth & comfortable", traditional: "Can be rough/abrasive" },
   { feature: "Stain resistance", eco: "Excellent", traditional: "Poor to moderate" },
   { feature: "Colour consistency", eco: "Uniform & lasting", traditional: "Can mottle/fade" },
@@ -53,7 +53,7 @@ export default function WhyEcoFinish() {
         <title>Why ECO Finish? | Benefits of ECO Finish Pool Coating | Canary Detect</title>
         <meta 
           name="description" 
-          content="Discover why ECO Finish is the superior pool coating choice. 15+ year durability, beautiful water colours, eco-friendly, and perfect for Canary Islands pools." 
+          content="Discover why ECO Finish is the superior pool coating choice. 10+ year durability, beautiful water colours, eco-friendly, and perfect for Canary Islands pools." 
         />
       </Helmet>
 

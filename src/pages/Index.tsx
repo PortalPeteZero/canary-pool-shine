@@ -10,7 +10,7 @@ import poolAquaImage from "@/assets/pool-aqua.jpg";
 
 const comparisons = [
   {
-    title: "Lasts 15+ Years",
+    title: "Lasts 10+ Years",
     description: "Traditional finishes need replastering every 5-7 years. ECO Finish bonds permanently to your pool surface.",
   },
   {
@@ -52,7 +52,7 @@ export default function Index() {
         <title>ECO Finish Pool Coatings | Canary Detect - Canary Islands Specialists</title>
         <meta 
           name="description" 
-          content="Transform your pool with ECO Finish coatings. Canary Detect are specialist installers across all Canary Islands. Beautiful colours, 15+ year durability." 
+          content="Transform your pool with ECO Finish coatings. Canary Detect are specialist installers across all Canary Islands. Beautiful colours, 10+ year durability." 
         />
       </Helmet>
 
@@ -75,7 +75,7 @@ export default function Index() {
               The Pool Finish That Outlasts the Rest
             </h1>
             <p className="text-xl text-white/80 mb-4 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              ECO Finish delivers 15+ years of durability, colour stability, and low maintenance — 
+              ECO Finish delivers 10+ years of durability, colour stability, and low maintenance — 
               where traditional finishes fail within a decade.
             </p>
             <p className="text-base text-white/60 mb-10 animate-fade-up" style={{ animationDelay: "0.35s" }}>
