@@ -125,6 +125,20 @@ import merCendree1 from "@/assets/installations/mer-cendree/mer-cendree-1.jpg";
 import merCendree2 from "@/assets/installations/mer-cendree/mer-cendree-2.jpg";
 import merCendree3 from "@/assets/installations/mer-cendree/mer-cendree-3.jpg";
 
+// Brillo Blanco - Mykonos
+import mykonos1 from "@/assets/installations/mykonos/mykonos-1.jpg";
+import mykonos2 from "@/assets/installations/mykonos/mykonos-2.jpg";
+import mykonos3 from "@/assets/installations/mykonos/mykonos-3.jpg";
+
+// Brillo Blanco - Rivage Bronze
+import rivageBronze1 from "@/assets/installations/rivage-bronze/rivage-bronze-1.jpg";
+import rivageBronze2 from "@/assets/installations/rivage-bronze/rivage-bronze-2.jpg";
+
+// Brillo Blanco - Tropea Sands
+import tropeaSands1 from "@/assets/installations/tropea-sands/tropea-sands-1.jpg";
+import tropeaSands2 from "@/assets/installations/tropea-sands/tropea-sands-2.jpg";
+import tropeaSands3 from "@/assets/installations/tropea-sands/tropea-sands-3.jpg";
+
 export const installationImages: Record<string, string[]> = {
   barbuda: [barbuda1, barbuda2, barbuda3],
   "black-absinthe": [blackAbsinthe1, blackAbsinthe2, blackAbsinthe3],
@@ -152,4 +166,7 @@ export const installationImages: Record<string, string[]> = {
   "cala-macarella": [calaMacarella1, calaMacarella2, calaMacarella3],
   "mallorca-sand": [mallorcaSand1, mallorcaSand2, mallorcaSand3],
   "mer-cendree": [merCendree1, merCendree2, merCendree3],
+  "mykonos": [mykonos1, mykonos2, mykonos3],
+  "rivage-bronze": [rivageBronze1, rivageBronze2],
+  "tropea-sands": [tropeaSands1, tropeaSands2, tropeaSands3],
 };
