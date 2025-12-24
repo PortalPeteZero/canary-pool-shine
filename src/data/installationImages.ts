@@ -21,9 +21,21 @@ import blueLagoon1 from "@/assets/installations/blue-lagoon/blue-lagoon-1.jpg";
 import blueLagoon2 from "@/assets/installations/blue-lagoon/blue-lagoon-2.jpg";
 import blueLagoon3 from "@/assets/installations/blue-lagoon/blue-lagoon-3.jpg";
 
+// Blue Mist
+import blueMist1 from "@/assets/installations/blue-mist/blue-mist-1.jpg";
+import blueMist2 from "@/assets/installations/blue-mist/blue-mist-2.jpg";
+import blueMist3 from "@/assets/installations/blue-mist/blue-mist-3.jpg";
+
+// Cabo Verde
+import caboVerde1 from "@/assets/installations/cabo-verde/cabo-verde-1.jpg";
+import caboVerde2 from "@/assets/installations/cabo-verde/cabo-verde-2.jpg";
+import caboVerde3 from "@/assets/installations/cabo-verde/cabo-verde-3.jpg";
+
 export const installationImages: Record<string, string[]> = {
   barbuda: [barbuda1, barbuda2, barbuda3],
   "black-absinthe": [blackAbsinthe1, blackAbsinthe2, blackAbsinthe3],
   "blue-granite": [blueGranite1, blueGranite2, blueGranite3],
   "blue-lagoon": [blueLagoon1, blueLagoon2, blueLagoon3],
+  "blue-mist": [blueMist1, blueMist2, blueMist3],
+  "cabo-verde": [caboVerde1, caboVerde2, caboVerde3],
 };
