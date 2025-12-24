@@ -90,7 +90,7 @@ export default function Index() {
               </Button>
               <Button asChild variant="outline-light" size="xl">
                 <Link to="/colour-selector">
-                  Explore Water Colours
+                  Explore Colour Range
                 </Link>
               </Button>
             </div>
