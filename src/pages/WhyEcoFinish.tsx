@@ -58,52 +58,47 @@ export default function WhyEcoFinish() {
       </Helmet>
 
       {/* Hero - Dark */}
-      <section className="bg-navy-900 py-24 md:py-32 relative overflow-hidden">
+      <section className="bg-navy-900 py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         <div className="container relative">
           <div className="max-w-3xl">
-            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-4">
-              The ECO Finish Advantage
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-5">
               Why Choose ECO Finish?
             </h1>
-            <p className="text-xl text-white/80 leading-relaxed">
-              ECO Finish represents a breakthrough in pool surface technology. 
-              Combining exceptional durability with stunning aesthetics, it's the 
-              smart choice for Canary Islands pool owners who want lasting beauty 
-              without constant maintenance.
+            <p className="text-xl text-white/75">
+              A breakthrough in pool surface technology combining exceptional 
+              durability with stunning aesthetics.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Benefits Grid - Light */}
-      <section className="py-24 md:py-32">
+      {/* Benefits Grid - Light with generous spacing */}
+      <section className="py-28 md:py-36">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               The ECO Finish Advantage
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground">
               Every benefit designed to make pool ownership simpler and more enjoyable.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-14">
             {benefits.map((benefit, index) => (
               <div 
                 key={benefit.title}
-                className="p-6 rounded-lg bg-card border border-border/50 shadow-soft animate-fade-up"
+                className="p-8 rounded-xl bg-card border border-border/40 shadow-card animate-fade-up"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
-                  <benefit.icon className="h-6 w-6 text-primary" />
+                <div className="w-11 h-11 rounded-lg bg-primary/8 flex items-center justify-center mb-6">
+                  <benefit.icon className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   {benefit.title}
                 </h3>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground text-sm">
                   {benefit.description}
                 </p>
               </div>
@@ -113,20 +108,20 @@ export default function WhyEcoFinish() {
       </section>
 
       {/* Comparison Table - Subtle light grey */}
-      <section className="py-24 md:py-32 bg-surface-light">
+      <section className="py-28 md:py-36 bg-surface-light">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               ECO Finish vs Traditional Plaster
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground">
               See how ECO Finish compares to conventional pool finishes.
             </p>
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="rounded-xl overflow-hidden shadow-soft bg-card border border-border/50">
-              <div className="grid grid-cols-3 gap-4 p-5 bg-navy-900 text-white font-semibold uppercase tracking-wide text-sm">
+            <div className="rounded-xl overflow-hidden shadow-card bg-card border border-border/40">
+              <div className="grid grid-cols-3 gap-4 p-5 bg-foreground text-background font-medium text-sm">
                 <div>Feature</div>
                 <div>ECO Finish</div>
                 <div>Traditional Plaster</div>
@@ -134,7 +129,7 @@ export default function WhyEcoFinish() {
               {comparisons.map((row, index) => (
                 <div 
                   key={row.feature}
-                  className={`grid grid-cols-3 gap-4 p-5 ${index % 2 === 0 ? 'bg-card' : 'bg-surface-light/50'}`}
+                  className={`grid grid-cols-3 gap-4 p-5 text-sm ${index % 2 === 0 ? 'bg-card' : 'bg-surface-light/50'}`}
                 >
                   <div className="font-medium text-foreground">{row.feature}</div>
                   <div className="text-primary font-medium flex items-center gap-2">

@@ -34,7 +34,7 @@
     --input: 220 12% 92%;
     --ring: 40 95% 48%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
 
     /* Brand tokens - Warm amber (use sparingly) */
     --orange-50: 40 100% 97%;
@@ -58,11 +58,11 @@
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 99%) 100%);
     
-    /* Shadows - softer */
-    --shadow-soft: 0 2px 16px -2px hsl(220 20% 12% / 0.05);
-    --shadow-medium: 0 4px 24px -4px hsl(220 20% 12% / 0.08);
-    --shadow-glow: 0 0 40px hsl(40 95% 48% / 0.15);
-    --shadow-card: 0 1px 8px -1px hsl(220 20% 12% / 0.04);
+    /* Shadows - very soft, architectural */
+    --shadow-soft: 0 1px 12px -2px hsl(220 20% 12% / 0.04);
+    --shadow-medium: 0 2px 20px -4px hsl(220 20% 12% / 0.06);
+    --shadow-glow: 0 0 40px hsl(40 95% 48% / 0.12);
+    --shadow-card: 0 1px 6px -1px hsl(220 20% 12% / 0.03);
 
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
