@@ -10,20 +10,20 @@ import poolAquaImage from "@/assets/pool-aqua.jpg";
 
 const comparisons = [
   {
-    title: "Lasts 10+ Years",
-    description: "Traditional finishes need replastering every 5-7 years. ECO Finish bonds permanently to your pool surface.",
+    title: "Break the Repainting Cycle",
+    description: "Gel coat and painted fibreglass surfaces often need renewal every 1–2 years. ECO Finish is designed to last 10+ years, ending the constant resurfacing cycle.",
   },
   {
-    title: "No Fading or Staining",
-    description: "UV-stable pigments resist the intense Canary Islands sun. Colours stay true year after year.",
+    title: "No More Pool Draining",
+    description: "Traditional resurfacing means draining and refilling your pool — costly in the Canary Islands where water prices are high. ECO Finish minimises this disruption.",
   },
   {
-    title: "Smooth, Comfortable Surface",
-    description: "Unlike rough plaster that irritates skin, ECO Finish stays silky smooth throughout its lifespan.",
+    title: "Less Downtime for Rentals",
+    description: "If your villa is a holiday rental, regular resurfacing means lost bookings. ECO Finish keeps your pool in service longer with fewer interruptions.",
   },
   {
-    title: "Minimal Maintenance",
-    description: "Resists algae growth and chemical imbalances. Less cleaning, fewer chemicals, lower costs.",
+    title: "Built for Island Conditions",
+    description: "Intense sun, salt air, and year-round use take their toll on gel coats. ECO Finish is formulated to withstand Canary Islands conditions without fading or deteriorating.",
   },
 ];
 
@@ -72,14 +72,14 @@ export default function Index() {
               ECO Finish Specialists • Canary Islands
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              The Pool Finish That Outlasts the Rest
+              Stop Repainting Your Pool Every Year
             </h1>
             <p className="text-xl text-white/80 mb-4 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              ECO Finish delivers 10+ years of durability, colour stability, and low maintenance — 
-              where traditional finishes fail within a decade.
+              Tired of re-gel-coating or repainting your fibreglass pool? ECO Finish offers a 
+              longer-lasting alternative — designed to perform for 10+ years.
             </p>
             <p className="text-base text-white/60 mb-10 animate-fade-up" style={{ animationDelay: "0.35s" }}>
-              Engineered for intense UV, salt air, and year-round use in the Canary Islands.
+              Less draining. Less downtime. Less wasted water. Ideal for Canary Islands pools.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               <Button asChild size="xl">
@@ -112,11 +112,11 @@ export default function Index() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
-              Why ECO Finish Outperforms Traditional Finishes
+              Why Pool Owners Are Switching to ECO Finish
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Pool owners across the Canary Islands are switching to ECO Finish for one reason: 
-              it performs better, longer, with less hassle.
+              Fibreglass pools with gel coat or painted surfaces often need resurfacing every 1–2 years. 
+              ECO Finish breaks that cycle with a coating designed to last.
             </p>
           </div>
 

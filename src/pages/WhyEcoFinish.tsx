@@ -7,8 +7,18 @@ import { Layout } from "@/components/layout/Layout";
 const benefits = [
   {
     icon: Shield,
-    title: "Exceptional Durability",
-    description: "ECO Finish creates a permanent bond with your pool surface, lasting 10+ years without the need for replastering. It resists staining, chemical damage, and the harsh effects of UV exposure.",
+    title: "End the Resurfacing Cycle",
+    description: "Gel coat and painted fibreglass surfaces commonly need renewal every 1–2 years due to sun exposure and chemical wear. ECO Finish is designed to last 10+ years, breaking this costly cycle.",
+  },
+  {
+    icon: Clock,
+    title: "Less Downtime, Fewer Disruptions",
+    description: "Traditional resurfacing often means 1–2 weeks of pool downtime. For villa rentals, that's lost bookings. ECO Finish minimises interruptions to your property and guests.",
+  },
+  {
+    icon: Leaf,
+    title: "Save Water and Money",
+    description: "Each resurfacing requires draining and refilling your pool. In the Canary Islands, where water costs are high, ECO Finish reduces this expense significantly over time.",
   },
   {
     icon: Palette,
@@ -18,32 +28,22 @@ const benefits = [
   {
     icon: Sparkles,
     title: "Smooth, Comfortable Surface",
-    description: "Unlike traditional plaster finishes, ECO Finish provides a smooth, non-abrasive surface that's comfortable underfoot and gentle on swimwear.",
-  },
-  {
-    icon: Leaf,
-    title: "Eco-Friendly Formula",
-    description: "ECO Finish uses environmentally conscious materials and application processes. The durable finish also means fewer resources spent on repairs and replacements over time.",
-  },
-  {
-    icon: Clock,
-    title: "Quick Installation",
-    description: "Most residential pools can be completed in just 2-3 days, minimizing disruption to your home and getting you back in the water faster.",
+    description: "ECO Finish provides a smooth, non-porous surface that's comfortable underfoot and gentle on swimwear — unlike rough or deteriorating gel coat surfaces.",
   },
   {
     icon: ThumbsUp,
-    title: "Low Maintenance",
-    description: "The smooth, non-porous surface naturally resists algae growth and makes cleaning easier. Spend less time maintaining your pool and more time enjoying it.",
+    title: "Built for Island Conditions",
+    description: "Intense UV, salt air, and year-round use take their toll on traditional finishes. ECO Finish is formulated specifically to withstand Canary Islands conditions.",
   },
 ];
 
 const comparisons = [
-  { feature: "Lifespan", eco: "10+ years", traditional: "5-7 years" },
-  { feature: "Surface feel", eco: "Smooth & comfortable", traditional: "Can be rough/abrasive" },
-  { feature: "Stain resistance", eco: "Excellent", traditional: "Poor to moderate" },
-  { feature: "Colour consistency", eco: "Uniform & lasting", traditional: "Can mottle/fade" },
-  { feature: "Algae resistance", eco: "High", traditional: "Low" },
-  { feature: "Maintenance", eco: "Minimal", traditional: "Regular acid washing" },
+  { feature: "Expected lifespan", eco: "10+ years", traditional: "1–2 years before renewal" },
+  { feature: "Pool draining", eco: "Once at installation", traditional: "Each time resurfaced" },
+  { feature: "Downtime", eco: "2–3 days installation", traditional: "1–2 weeks per resurface" },
+  { feature: "Surface feel", eco: "Smooth & comfortable", traditional: "Can become rough over time" },
+  { feature: "UV & chemical resistance", eco: "High — formulated for island conditions", traditional: "Degrades with sun and chemicals" },
+  { feature: "Long-term cost", eco: "Lower — fewer interventions", traditional: "Higher — regular resurfacing" },
 ];
 
 export default function WhyEcoFinish() {
@@ -66,8 +66,8 @@ export default function WhyEcoFinish() {
               Why Choose ECO Finish?
             </h1>
             <p className="text-xl text-white/75">
-              A breakthrough in pool surface technology combining exceptional 
-              durability with stunning aesthetics.
+              If you're tired of regularly repainting or re-gel-coating your fibreglass pool — 
+              losing time, water, and money — ECO Finish offers a longer-lasting alternative.
             </p>
           </div>
         </div>
@@ -112,10 +112,10 @@ export default function WhyEcoFinish() {
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              ECO Finish vs Traditional Plaster
+              ECO Finish vs Gel Coat / Painted Fibreglass
             </h2>
             <p className="text-muted-foreground">
-              See how ECO Finish compares to conventional pool finishes.
+              See how ECO Finish compares to traditional fibreglass pool surfaces.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export default function WhyEcoFinish() {
               <div className="grid grid-cols-3 gap-4 p-5 bg-foreground text-background font-medium text-sm">
                 <div>Feature</div>
                 <div>ECO Finish</div>
-                <div>Traditional Plaster</div>
+                <div>Gel Coat / Paint</div>
               </div>
               {comparisons.map((row, index) => (
                 <div 
