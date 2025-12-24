@@ -1,37 +1,49 @@
 // Import all swatch texture images
-import pearlWhite from "@/assets/swatches/pearl-white.png";
-import glacier from "@/assets/swatches/glacier.png";
-import seafoam from "@/assets/swatches/seafoam.png";
-import aquamarine from "@/assets/swatches/aquamarine.png";
-import maldives from "@/assets/swatches/maldives.png";
-import skyBlue from "@/assets/swatches/sky-blue.png";
-import blueGranite from "@/assets/swatches/blue-granite.png";
-import mediterraneanBlue from "@/assets/swatches/mediterranean-blue.png";
 import konaCoast from "@/assets/swatches/kona-coast.png";
 import blueLagoon from "@/assets/swatches/blue-lagoon.png";
+import mediterraneanBlue from "@/assets/swatches/mediterranean-blue.png";
+import commercialBlue from "@/assets/swatches/commercial-blue.png";
 import midnightBlue from "@/assets/swatches/midnight-blue.png";
-import frenchGrey from "@/assets/swatches/french-grey.png";
-import saharaSand from "@/assets/swatches/sahara-sand.png";
+import sandyBeach from "@/assets/swatches/sandy-beach.png";
+import gialloVersilia from "@/assets/swatches/giallo-versilia.png";
 import santorini from "@/assets/swatches/santorini.png";
+import blueGranite from "@/assets/swatches/blue-granite.png";
+import greyReef from "@/assets/swatches/grey-reef.png";
+import frenchGrey from "@/assets/swatches/french-grey.png";
+import perleNoire from "@/assets/swatches/perle-noire.png";
+import saharaSand from "@/assets/swatches/sahara-sand.png";
+import barbuda from "@/assets/swatches/barbuda.png";
+import californiaWhite from "@/assets/swatches/california-white.png";
+import blueMist from "@/assets/swatches/blue-mist.png";
+import iceIceBayBay from "@/assets/swatches/ice-ice-bay-bay.png";
+import pacificBlue from "@/assets/swatches/pacific-blue.png";
+import blackAbsinthe from "@/assets/swatches/black-absinthe.png";
+import marrakesh from "@/assets/swatches/marrakesh.png";
+import caboVerde from "@/assets/swatches/cabo-verde.png";
 
 // Map finish IDs to their texture images
 export const swatchImages: Record<string, string> = {
-  "pearl-white": pearlWhite,
-  "glacier": glacier,
-  "seafoam": seafoam,
-  "aquamarine": aquamarine,
-  "maldives": maldives,
-  "sky-blue": skyBlue,
-  "horizon": blueLagoon,
-  "mediterranean": mediterraneanBlue,
-  "aegean": konaCoast,
-  "cobalt": blueGranite,
-  "ocean": midnightBlue,
-  "abyss": midnightBlue,
-  "slate": frenchGrey,
-  "storm": saharaSand,
-  "obsidian": santorini,
-  "midnight": santorini,
+  "kona-coast": konaCoast,
+  "blue-lagoon": blueLagoon,
+  "mediterranean-blue": mediterraneanBlue,
+  "commercial-blue": commercialBlue,
+  "midnight-blue": midnightBlue,
+  "sandy-beach": sandyBeach,
+  "giallo-versilia": gialloVersilia,
+  "santorini": santorini,
+  "blue-granite": blueGranite,
+  "grey-reef": greyReef,
+  "french-grey": frenchGrey,
+  "perle-noire": perleNoire,
+  "sahara-sand": saharaSand,
+  "barbuda": barbuda,
+  "california-white": californiaWhite,
+  "blue-mist": blueMist,
+  "ice-ice-bay-bay": iceIceBayBay,
+  "pacific-blue": pacificBlue,
+  "black-absinthe": blackAbsinthe,
+  "marrakesh": marrakesh,
+  "cabo-verde": caboVerde,
 };
 
 // Helper function to get swatch image with fallback

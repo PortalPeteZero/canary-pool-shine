@@ -28,54 +28,54 @@ const galleryItems: GalleryItem[] = [
     id: "1",
     title: "Modern Villa Pool",
     location: "Tenerife",
-    finish: "Mediterranean",
-    family: "classic-blue",
-    description: "A stunning infinity pool overlooking the Atlantic Ocean. The Mediterranean finish creates a perfect blend of vibrant blue water that complements the volcanic landscape.",
+    finish: "Mediterranean Blue",
+    family: "aquaBRIGHT",
+    description: "A stunning infinity pool overlooking the Atlantic Ocean. The Mediterranean Blue finish creates a perfect blend of vibrant blue water that complements the volcanic landscape.",
     image: poolBlueImage,
   },
   {
     id: "2",
     title: "Resort Pool",
     location: "Gran Canaria",
-    finish: "Pearl White",
-    family: "bright-white",
-    description: "Crystal-clear waters in a boutique hotel setting. The Pearl White finish maximizes the sparkle and clarity of the pool under the Canarian sun.",
+    finish: "California White",
+    family: "Commercial",
+    description: "Crystal-clear waters in a boutique hotel setting. The California White finish maximizes the sparkle and clarity of the pool under the Canarian sun.",
     image: poolWhiteImage,
   },
   {
     id: "3",
     title: "Private Residence",
     location: "Lanzarote",
-    finish: "Obsidian",
-    family: "charcoal",
-    description: "A dramatic charcoal pool that creates mirror-like reflections. The Obsidian finish pairs beautifully with the volcanic stone surrounds.",
+    finish: "Perle Noire",
+    family: "aquaBRIGHT",
+    description: "A dramatic charcoal pool that creates mirror-like reflections. The Perle Noire finish pairs beautifully with the volcanic stone surrounds.",
     image: poolDarkImage,
   },
   {
     id: "4",
     title: "Beachfront Villa",
     location: "Fuerteventura",
-    finish: "Aquamarine",
-    family: "soft-aqua",
-    description: "Tropical turquoise waters reminiscent of the nearby beaches. The Aquamarine finish brings Caribbean vibes to this stunning property.",
+    finish: "Cabo Verde",
+    family: "polyFIBRO",
+    description: "Tropical turquoise waters reminiscent of the nearby beaches. The Cabo Verde finish brings Caribbean vibes to this stunning property.",
     image: poolAquaImage,
   },
   {
     id: "5",
     title: "Contemporary Home",
     location: "Tenerife",
-    finish: "Slate",
-    family: "graphite",
-    description: "A sleek graphite pool that reflects the sky beautifully. The Slate finish adds modern sophistication to this architectural home.",
+    finish: "Grey Reef",
+    family: "aquaBRIGHT",
+    description: "A sleek graphite pool that reflects the sky beautifully. The Grey Reef finish adds modern sophistication to this architectural home.",
     image: poolSlateImage,
   },
   {
     id: "6",
     title: "Luxury Estate",
     location: "La Palma",
-    finish: "Aegean",
-    family: "classic-blue",
-    description: "Classic blue waters set against a backdrop of lush gardens. The Aegean finish provides rich, inviting tones perfect for relaxation.",
+    finish: "Blue Lagoon",
+    family: "aquaBRIGHT",
+    description: "Classic blue waters set against a backdrop of lush gardens. The Blue Lagoon finish provides rich, inviting tones perfect for relaxation.",
     image: heroPoolImage,
   },
 ];
@@ -133,17 +133,17 @@ export default function Gallery() {
             >
               All
             </button>
-            {finishData.families.map((family) => (
+            {["aquaBRIGHT", "polyFIBRO", "Commercial"].map((productLine) => (
               <button
-                key={family.id}
-                onClick={() => setActiveFilter(family.id)}
+                key={productLine}
+                onClick={() => setActiveFilter(productLine)}
                 className={`px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                  activeFilter === family.id
+                  activeFilter === productLine
                     ? "bg-foreground text-background"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {family.name}
+                {productLine}
               </button>
             ))}
           </div>
