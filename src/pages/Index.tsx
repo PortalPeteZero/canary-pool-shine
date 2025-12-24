@@ -54,7 +54,7 @@ export default function Index() {
       </Helmet>
 
       {/* Hero Section - Video Background */}
-      <section className="relative h-[85vh] min-h-[600px] max-h-[900px] overflow-hidden">
+      <section className="relative min-h-[80vh] md:min-h-[85vh] max-h-[900px] overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video 
@@ -67,32 +67,32 @@ export default function Index() {
           >
             <source src="/videos/apply-wall.mov" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-900/75 to-navy-950/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/80 to-navy-950/60 md:from-navy-950/90 md:via-navy-900/75 md:to-navy-950/50" />
         </div>
         
-        <div className="container relative h-full flex items-center">
+        <div className="container relative h-full flex items-center py-16 md:py-0">
           <div className="max-w-2xl">
-            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-3 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <p className="text-primary font-semibold uppercase tracking-wider text-xs sm:text-sm mb-2 md:mb-3 animate-fade-up" style={{ animationDelay: "0.1s" }}>
               ECO Finish Specialists • Canary Islands
             </p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-3 md:mb-4 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               Stop Repainting Your Pool Every Year
             </h1>
-            <p className="text-lg md:text-xl text-white/80 mb-3 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <p className="text-base sm:text-lg md:text-xl text-white/80 mb-2 md:mb-3 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
               Tired of re-gel-coating or repainting your fibreglass pool? ECO Finish offers a 
               longer-lasting alternative — designed to perform for 10+ years.
             </p>
-            <p className="text-sm text-white/60 mb-6 animate-fade-up" style={{ animationDelay: "0.35s" }}>
+            <p className="text-xs sm:text-sm text-white/60 mb-5 md:mb-6 animate-fade-up" style={{ animationDelay: "0.35s" }}>
               Less draining. Less downtime. Less wasted water. Ideal for Canary Islands pools.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="w-full sm:w-auto">
                 <Link to="/contact">
                   Get a Free Quote
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild variant="outline-light" size="lg">
+              <Button asChild variant="outline-light" size="lg" className="w-full sm:w-auto">
                 <Link to="/colour-selector">
                   Explore Colour Range
                 </Link>
@@ -232,41 +232,41 @@ export default function Index() {
       {/* Built for Canary Islands - Image-First Layout */}
       <section className="py-10 md:py-14">
         <div className="container">
-          <div className="grid lg:grid-cols-5 gap-6 items-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 items-center">
             {/* Large Hero Image */}
-            <div className="lg:col-span-3 relative">
+            <div className="lg:col-span-3 relative order-2 md:order-1">
               <img 
                 src={frenchGrey1}
                 alt="Beautiful ECO Finish pool with crystal clear water"
-                className="aspect-[16/10] w-full rounded-lg object-cover shadow-medium"
+                className="aspect-[4/3] md:aspect-[16/10] w-full rounded-lg object-cover shadow-medium"
                 loading="lazy"
               />
-              <div className="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm rounded-lg px-4 py-2 shadow-soft">
-                <p className="text-sm font-medium text-foreground">10+ Year Durability</p>
-                <p className="text-xs text-muted-foreground">Built for island conditions</p>
+              <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 md:px-4 md:py-2 shadow-soft">
+                <p className="text-xs md:text-sm font-medium text-foreground">10+ Year Durability</p>
+                <p className="text-[10px] md:text-xs text-muted-foreground">Built for island conditions</p>
               </div>
             </div>
             
             {/* Content + Benefits */}
-            <div className="lg:col-span-2">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+            <div className="lg:col-span-2 order-1 md:order-2">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3">
                 Built for Canary Islands Conditions
               </h2>
-              <p className="text-muted-foreground mb-5 text-sm leading-relaxed">
+              <p className="text-muted-foreground mb-4 md:mb-5 text-sm leading-relaxed">
                 Island pools face unique challenges: intense year-round sun, salt-laden air, 
                 and constant use. ECO Finish thrives in these conditions.
               </p>
               
-              <div className="grid grid-cols-2 gap-3 mb-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 mb-4 md:mb-5">
                 {benefits.map((benefit) => (
-                  <div key={benefit.text} className="flex items-center gap-2 bg-surface-light rounded-lg p-3">
+                  <div key={benefit.text} className="flex items-center gap-2 bg-surface-light rounded-lg p-2.5 md:p-3">
                     <benefit.icon className="w-4 h-4 text-primary shrink-0" />
                     <span className="text-xs font-medium text-foreground">{benefit.text}</span>
                   </div>
                 ))}
               </div>
               
-              <Button asChild size="default">
+              <Button asChild size="default" className="w-full sm:w-auto">
                 <Link to="/process">
                   See How It's Applied
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -278,23 +278,23 @@ export default function Index() {
       </section>
 
       {/* Colour Preview Strip */}
-      <section className="py-8 bg-navy-900">
+      <section className="py-6 md:py-8 bg-navy-900">
         <div className="container">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col items-center gap-4 md:gap-6 md:flex-row md:justify-between">
             <div className="text-center md:text-left">
-              <h3 className="text-xl font-bold text-white mb-1">21+ Colour Options</h3>
-              <p className="text-white/70 text-sm">From vibrant blues to natural sands</p>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-1">21+ Colour Options</h3>
+              <p className="text-white/70 text-xs md:text-sm">From vibrant blues to natural sands</p>
             </div>
             
-            <div className="flex items-center gap-2 overflow-hidden">
-              <img src={blueLagoon1} alt="Blue Lagoon" className="w-16 h-16 rounded-lg object-cover" />
-              <img src={santorini1} alt="Santorini" className="w-16 h-16 rounded-lg object-cover" />
-              <img src={konaCoast1} alt="Kona Coast" className="w-16 h-16 rounded-lg object-cover" />
-              <img src={pacificBlue1} alt="Pacific Blue" className="w-16 h-16 rounded-lg object-cover" />
-              <img src={frenchGrey1} alt="French Grey" className="w-16 h-16 rounded-lg object-cover hidden sm:block" />
+            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto max-w-full pb-1">
+              <img src={blueLagoon1} alt="Blue Lagoon" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0" />
+              <img src={santorini1} alt="Santorini" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0" />
+              <img src={konaCoast1} alt="Kona Coast" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0" />
+              <img src={pacificBlue1} alt="Pacific Blue" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0" />
+              <img src={frenchGrey1} alt="French Grey" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0 hidden xs:block sm:block" />
             </div>
             
-            <Button asChild variant="outline-light" size="default">
+            <Button asChild variant="outline-light" size="default" className="w-full sm:w-auto">
               <Link to="/colour-selector">
                 Explore Colours
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -305,19 +305,19 @@ export default function Index() {
       </section>
 
       {/* CTA Section - Compact */}
-      <section className="py-10 md:py-14">
+      <section className="py-8 md:py-14">
         <div className="container">
-          <div className="rounded-lg bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 p-8 md:p-10">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="rounded-lg bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 p-5 sm:p-6 md:p-10">
+            <div className="flex flex-col items-center gap-4 md:gap-6 md:flex-row md:justify-between">
               <div className="text-center md:text-left">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-1 md:mb-2">
                   Ready to Transform Your Pool?
                 </h2>
-                <p className="text-muted-foreground">
+                <p className="text-sm md:text-base text-muted-foreground">
                   Get a free, no-obligation quote. We serve all seven Canary Islands.
                 </p>
               </div>
-              <Button asChild size="lg" className="shrink-0">
+              <Button asChild size="lg" className="w-full sm:w-auto shrink-0">
                 <Link to="/contact">
                   Request Your Free Quote
                   <ArrowRight className="ml-2 h-4 w-4" />
