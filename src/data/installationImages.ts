@@ -91,6 +91,11 @@ import sandyBeach1 from "@/assets/installations/sandy-beach/sandy-beach-1.jpg";
 import sandyBeach2 from "@/assets/installations/sandy-beach/sandy-beach-2.jpg";
 import sandyBeach3 from "@/assets/installations/sandy-beach/sandy-beach-3.jpg";
 
+// Santorini
+import santorini1 from "@/assets/installations/santorini/santorini-1.jpg";
+import santorini2 from "@/assets/installations/santorini/santorini-2.jpg";
+import santorini3 from "@/assets/installations/santorini/santorini-3.jpg";
+
 export const installationImages: Record<string, string[]> = {
   barbuda: [barbuda1, barbuda2, barbuda3],
   "black-absinthe": [blackAbsinthe1, blackAbsinthe2, blackAbsinthe3],
@@ -110,4 +115,5 @@ export const installationImages: Record<string, string[]> = {
   "perle-noire": [perleNoire1, perleNoire2, perleNoire3],
   "sahara-sand": [saharaSand1, saharaSand2, saharaSand3],
   "sandy-beach": [sandyBeach1, sandyBeach2, sandyBeach3],
+  santorini: [santorini1, santorini2, santorini3],
 };
