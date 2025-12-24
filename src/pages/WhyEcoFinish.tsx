@@ -38,12 +38,46 @@ const benefits = [
 ];
 
 const comparisons = [
-  { feature: "Expected lifespan", eco: "10+ years", traditional: "1–2 years before renewal" },
-  { feature: "Pool draining", eco: "Once at installation", traditional: "Each time resurfaced" },
-  { feature: "Downtime", eco: "2–3 days installation", traditional: "1–2 weeks per resurface" },
-  { feature: "Surface feel", eco: "Smooth & comfortable", traditional: "Can become rough over time" },
-  { feature: "UV & chemical resistance", eco: "High — formulated for island conditions", traditional: "Degrades with sun and chemicals" },
-  { feature: "Long-term cost", eco: "Lower — fewer interventions", traditional: "Higher — regular resurfacing" },
+  { 
+    feature: "Expected Surface Lifespan", 
+    eco: "10+ years with proper care", 
+    traditional: "Gel coat / paint typically needs renewal every 1–2 years due to UV and chemical exposure" 
+  },
+  { 
+    feature: "Fade & Chalk Resistance", 
+    eco: "Highly resistant — no colour mottling or chalking", 
+    traditional: "Prone to chalking, blistering, and uneven fading over time" 
+  },
+  { 
+    feature: "Stain & Chemical Resistance", 
+    eco: "Extremely resistant to staining and chemical damage", 
+    traditional: "Moderate resistance — can discolour with imbalanced water chemistry" 
+  },
+  { 
+    feature: "Surface Comfort & Safety", 
+    eco: "Smooth, comfortable underfoot with good slip resistance", 
+    traditional: "Can become slippery; surface degrades with wear" 
+  },
+  { 
+    feature: "Repairability & Colour Matching", 
+    eco: "Easily blended repairs; custom colours matched to swatch", 
+    traditional: "Difficult to match colours; repairs often visible" 
+  },
+  { 
+    feature: "Pool Draining Required", 
+    eco: "Once at installation — then minimal intervention", 
+    traditional: "Each resurfacing requires full drain and refill" 
+  },
+  { 
+    feature: "Downtime During Resurfacing", 
+    eco: "2–3 days for installation; no repeat cycles", 
+    traditional: "1–2 weeks per resurface; repeated every 1–2 years" 
+  },
+  { 
+    feature: "Long-Term Cost", 
+    eco: "Lower — fewer interventions, less water use, less disruption", 
+    traditional: "Higher — regular resurfacing, water costs, lost rental income" 
+  },
 ];
 
 export default function WhyEcoFinish() {
@@ -107,24 +141,55 @@ export default function WhyEcoFinish() {
         </div>
       </section>
 
-      {/* Comparison Table - Subtle light grey */}
-      <section className="py-28 md:py-36 bg-surface-light">
+      {/* Understanding the Difference - Intro */}
+      <section className="py-20 md:py-24">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
+              Understanding Pool Surface Systems
+            </h2>
+            <div className="space-y-5 text-muted-foreground leading-relaxed">
+              <p>
+                Fibreglass pools are common across the Canary Islands. The fibreglass shell itself is durable, 
+                but the <strong className="text-foreground">gel coat or painted surface</strong> — the visible 
+                finish you swim in — is the wear layer that takes the brunt of UV exposure, chemicals, and daily use.
+              </p>
+              <p>
+                In island conditions, this surface layer typically requires <strong className="text-foreground">repainting 
+                or re-gel-coating every 1–2 years</strong>. Over time, full re-fibreglassing may also be needed. 
+                Each resurfacing means draining and refilling the pool — expensive in the Canaries where water 
+                costs are high — plus 1–2 weeks of downtime.
+              </p>
+              <p>
+                For rental properties, this means lost bookings. For homeowners, it means ongoing expense and disruption.
+              </p>
+              <p className="text-foreground font-medium">
+                ECO Finish offers an alternative: a long-life coating system designed to reduce the frequency 
+                of resurfacing, minimise water waste, and keep your pool in service longer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table - Subtle light grey */}
+      <section className="py-24 md:py-32 bg-surface-light">
+        <div className="container">
+          <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              ECO Finish vs Gel Coat / Painted Fibreglass
+              Long-Life Coating vs Traditional Gel Coat / Paint
             </h2>
             <p className="text-muted-foreground">
-              See how ECO Finish compares to traditional fibreglass pool surfaces.
+              A factual comparison of lifecycle performance, maintenance, and long-term cost.
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto">
+          <div className="max-w-4xl mx-auto">
             <div className="rounded-xl overflow-hidden shadow-card bg-card border border-border/40">
-              <div className="grid grid-cols-3 gap-4 p-5 bg-foreground text-background font-medium text-sm">
-                <div>Feature</div>
+              <div className="grid grid-cols-3 gap-4 p-5 bg-navy-900 text-white font-medium text-sm">
+                <div>Comparison Point</div>
                 <div>ECO Finish</div>
-                <div>Gel Coat / Paint</div>
+                <div>Gel Coat / Painted Fibreglass</div>
               </div>
               {comparisons.map((row, index) => (
                 <div 
@@ -132,14 +197,19 @@ export default function WhyEcoFinish() {
                   className={`grid grid-cols-3 gap-4 p-5 text-sm ${index % 2 === 0 ? 'bg-card' : 'bg-surface-light/50'}`}
                 >
                   <div className="font-medium text-foreground">{row.feature}</div>
-                  <div className="text-primary font-medium flex items-center gap-2">
-                    <Check className="h-4 w-4 shrink-0" />
-                    {row.eco}
+                  <div className="text-foreground flex items-start gap-2">
+                    <Check className="h-4 w-4 shrink-0 text-primary mt-0.5" />
+                    <span>{row.eco}</span>
                   </div>
                   <div className="text-muted-foreground">{row.traditional}</div>
                 </div>
               ))}
             </div>
+            
+            <p className="text-xs text-muted-foreground text-center mt-6">
+              Comparison based on typical Canary Islands conditions. Individual results may vary based on pool usage, 
+              water chemistry, and maintenance practices.
+            </p>
           </div>
         </div>
       </section>
