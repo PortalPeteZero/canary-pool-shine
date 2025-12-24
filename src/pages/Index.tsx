@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import heroPoolImage from "@/assets/hero-pool.jpg";
 import poolWhiteImage from "@/assets/pool-white.jpg";
+import poolBlueImage from "@/assets/pool-blue.jpg";
 
 const features = [
   {
@@ -47,7 +48,7 @@ export default function Index() {
         />
       </Helmet>
 
-      {/* Hero Section */}
+      {/* Hero Section - Dark */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img 
@@ -57,15 +58,15 @@ export default function Index() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/80 to-transparent" />
         </div>
-        <div className="container relative py-24 md:py-32 lg:py-40">
+        <div className="container relative py-28 md:py-36 lg:py-44">
           <div className="max-w-3xl">
-            <p className="text-primary font-bold uppercase tracking-wider mb-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
+            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-4 animate-fade-up" style={{ animationDelay: "0.1s" }}>
               ECO Finish Specialists • Canary Islands
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
               Transform Your Pool with Lasting Beauty
             </h1>
-            <p className="text-xl text-white/80 mb-8 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <p className="text-xl text-white/80 mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
               ECO Finish creates stunning, durable pool surfaces that last 15+ years. 
               Choose from seven beautiful water colour families and enjoy a finish 
               that's smooth, stain-resistant, and built for island living.
@@ -96,29 +97,59 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Image Showcase - Light */}
+      <section className="py-16 md:py-20">
+        <div className="container">
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="relative rounded-lg overflow-hidden shadow-soft aspect-[4/3]">
+              <img 
+                src={poolBlueImage}
+                alt="Crystal blue ECO Finish pool in Tenerife"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/60 to-transparent p-6">
+                <p className="text-white font-medium">Private Villa – Tenerife</p>
+              </div>
+            </div>
+            <div className="relative rounded-lg overflow-hidden shadow-soft aspect-[4/3]">
+              <img 
+                src={poolWhiteImage}
+                alt="Pearl white ECO Finish pool in Gran Canaria"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/60 to-transparent p-6">
+                <p className="text-white font-medium">Resort Pool – Gran Canaria</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section - Light */}
       <section className="py-20 md:py-28">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
               Why Choose ECO Finish?
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               A revolutionary pool finish that combines beauty with exceptional durability.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {features.map((feature, index) => (
               <div 
                 key={feature.title}
-                className="group p-6 rounded-lg bg-card border border-border shadow-card hover:shadow-medium transition-all duration-300 animate-fade-up"
+                className="group p-6 rounded-lg bg-card border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
+                <h3 className="text-lg font-bold text-foreground mb-3">
                   {feature.title}
                 </h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
@@ -130,28 +161,28 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 md:py-28 bg-secondary">
+      {/* Benefits Section - Subtle light grey */}
+      <section className="py-20 md:py-28 bg-surface-light">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Built for the Canary Islands Climate
               </h2>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
                 Our ECO Finish installations are specifically optimized for the unique 
                 conditions of island pools. From intense UV exposure to salt air, 
                 we ensure your finish performs beautifully year after year.
               </p>
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-5 mb-10">
                 {benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                  <li key={benefit} className="flex items-center gap-4">
+                    <div className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
                       <svg className="w-3.5 h-3.5 text-primary" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                     </div>
-                    <span className="text-foreground font-medium">{benefit}</span>
+                    <span className="text-foreground">{benefit}</span>
                   </li>
                 ))}
               </ul>
@@ -169,23 +200,21 @@ export default function Index() {
                 className="aspect-[4/3] w-full rounded-lg object-cover shadow-medium"
                 loading="lazy"
               />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-lg -z-10" />
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-navy-900/10 rounded-lg -z-10" />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28">
+      {/* CTA Section - Dark accent */}
+      <section className="py-24 md:py-32">
         <div className="container">
-          <div className="rounded-lg bg-navy-900 p-12 md:p-16 text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
+          <div className="rounded-xl bg-navy-900 p-12 md:p-16 text-center relative overflow-hidden">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
             <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
                 Ready to Transform Your Pool?
               </h2>
-              <p className="text-lg text-white/70 mb-8">
+              <p className="text-lg text-white/70 mb-10 leading-relaxed">
                 Get a free, no-obligation quote for your ECO Finish installation. 
                 We serve all seven Canary Islands.
               </p>
