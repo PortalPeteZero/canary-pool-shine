@@ -21,6 +21,17 @@ import blackAbsinthe from "@/assets/swatches/black-absinthe.png";
 import marrakesh from "@/assets/swatches/marrakesh.png";
 import caboVerde from "@/assets/swatches/cabo-verde.png";
 
+// Brillo Blanco swatches
+import blancoSuave from "@/assets/swatches/blanco-suave.jpg";
+import bahiaGlacial from "@/assets/swatches/bahia-glacial.jpg";
+import tropeaSands from "@/assets/swatches/tropea-sands.jpg";
+import calaMacarella from "@/assets/swatches/cala-macarella.jpg";
+import rivageBronze from "@/assets/swatches/rivage-bronze.jpg";
+import balearesSand from "@/assets/swatches/baleares-sand.jpg";
+import mykonos from "@/assets/swatches/mykonos.jpg";
+import mallorcaSand from "@/assets/swatches/mallorca-sand.jpg";
+import merCendree from "@/assets/swatches/mer-cendree.jpg";
+
 // Map finish IDs to their texture images
 export const swatchImages: Record<string, string> = {
   "kona-coast": konaCoast,
@@ -44,6 +55,16 @@ export const swatchImages: Record<string, string> = {
   "black-absinthe": blackAbsinthe,
   "marrakesh": marrakesh,
   "cabo-verde": caboVerde,
+  // Brillo Blanco
+  "blanco-suave": blancoSuave,
+  "bahia-glacial": bahiaGlacial,
+  "tropea-sands": tropeaSands,
+  "cala-macarella": calaMacarella,
+  "rivage-bronze": rivageBronze,
+  "baleares-sand": balearesSand,
+  "mykonos": mykonos,
+  "mallorca-sand": mallorcaSand,
+  "mer-cendree": merCendree,
 };
 
 // Helper function to get swatch image with fallback
