@@ -1,40 +1,48 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Droplets, Shield, Sparkles, Sun } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import heroPoolImage from "@/assets/hero-pool.jpg";
 import poolWhiteImage from "@/assets/pool-white.jpg";
 import poolBlueImage from "@/assets/pool-blue.jpg";
+import poolAquaImage from "@/assets/pool-aqua.jpg";
 
-const features = [
+const comparisons = [
   {
-    icon: Droplets,
-    title: "Beautiful Water Colours",
-    description: "Choose from seven stunning colour families to create your perfect pool aesthetic.",
+    title: "Lasts 15+ Years",
+    description: "Traditional finishes need replastering every 5-7 years. ECO Finish bonds permanently to your pool surface.",
   },
   {
-    icon: Shield,
-    title: "15+ Year Durability",
-    description: "ECO Finish bonds permanently to your pool surface, resisting stains and chemical damage.",
+    title: "No Fading or Staining",
+    description: "UV-stable pigments resist the intense Canary Islands sun. Colours stay true year after year.",
   },
   {
-    icon: Sparkles,
-    title: "Smooth Finish",
-    description: "A comfortable, non-abrasive surface that's gentle on skin and easy to maintain.",
+    title: "Smooth, Comfortable Surface",
+    description: "Unlike rough plaster that irritates skin, ECO Finish stays silky smooth throughout its lifespan.",
   },
   {
-    icon: Sun,
-    title: "UV Stable",
-    description: "Specially formulated to resist fading under the intense Canary Islands sunshine.",
+    title: "Minimal Maintenance",
+    description: "Resists algae growth and chemical imbalances. Less cleaning, fewer chemicals, lower costs.",
   },
 ];
 
-const benefits = [
-  "No more replastering every 5-7 years",
-  "Resistant to chemical imbalances",
-  "Reduces algae growth naturally",
-  "Eco-friendly application process",
+const installations = [
+  {
+    image: poolBlueImage,
+    location: "Private Villa – Tenerife",
+    finish: "Ocean Blue",
+  },
+  {
+    image: poolWhiteImage,
+    location: "Resort Pool – Gran Canaria",
+    finish: "Pearl White",
+  },
+  {
+    image: poolAquaImage,
+    location: "Holiday Home – Lanzarote",
+    finish: "Aqua Marine",
+  },
 ];
 
 export default function Index() {
@@ -64,12 +72,14 @@ export default function Index() {
               ECO Finish Specialists • Canary Islands
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-up" style={{ animationDelay: "0.2s" }}>
-              Transform Your Pool with Lasting Beauty
+              The Pool Finish That Outlasts the Rest
             </h1>
-            <p className="text-xl text-white/80 mb-10 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
-              ECO Finish creates stunning, durable pool surfaces that last 15+ years. 
-              Choose from seven beautiful water colour families and enjoy a finish 
-              that's smooth, stain-resistant, and built for island living.
+            <p className="text-xl text-white/80 mb-4 leading-relaxed animate-fade-up" style={{ animationDelay: "0.3s" }}>
+              ECO Finish delivers 15+ years of durability, colour stability, and low maintenance — 
+              where traditional finishes fail within a decade.
+            </p>
+            <p className="text-base text-white/60 mb-10 animate-fade-up" style={{ animationDelay: "0.35s" }}>
+              Engineered for intense UV, salt air, and year-round use in the Canary Islands.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up" style={{ animationDelay: "0.4s" }}>
               <Button asChild size="xl">
@@ -97,107 +107,149 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Image Showcase - Light */}
-      <section className="py-16 md:py-20">
+      {/* Why ECO Finish Section - Light, comparison-led */}
+      <section className="py-20 md:py-28">
         <div className="container">
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-            <div className="relative rounded-lg overflow-hidden shadow-soft aspect-[4/3]">
-              <img 
-                src={poolBlueImage}
-                alt="Crystal blue ECO Finish pool in Tenerife"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/60 to-transparent p-6">
-                <p className="text-white font-medium">Private Villa – Tenerife</p>
-              </div>
-            </div>
-            <div className="relative rounded-lg overflow-hidden shadow-soft aspect-[4/3]">
-              <img 
-                src={poolWhiteImage}
-                alt="Pearl white ECO Finish pool in Gran Canaria"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/60 to-transparent p-6">
-                <p className="text-white font-medium">Resort Pool – Gran Canaria</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section - Light, more spacing */}
-      <section className="py-24 md:py-32">
-        <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Choose ECO Finish?
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+              Why ECO Finish Outperforms Traditional Finishes
             </h2>
-            <p className="text-muted-foreground">
-              A revolutionary pool finish that combines beauty with exceptional durability.
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Pool owners across the Canary Islands are switching to ECO Finish for one reason: 
+              it performs better, longer, with less hassle.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
-            {features.map((feature, index) => (
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-10 max-w-4xl mx-auto">
+            {comparisons.map((item, index) => (
               <div 
-                key={feature.title}
-                className="group p-8 rounded-xl bg-card border border-border/40 shadow-card hover:shadow-soft transition-all duration-300 animate-fade-up"
+                key={item.title}
+                className="flex gap-5 animate-fade-up"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
-                <div className="w-11 h-11 rounded-lg bg-primary/8 flex items-center justify-center mb-6 group-hover:bg-primary/12 transition-colors">
-                  <feature.icon className="h-5 w-5 text-primary" />
+                <div className="w-8 h-8 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {feature.description}
-                </p>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-14">
+            <Button asChild variant="outline" size="lg">
+              <Link to="/why-eco-finish">
+                Learn More About ECO Finish
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section - Subtle light grey */}
+      {/* Installation Showcase - Light grey */}
       <section className="py-20 md:py-28 bg-surface-light">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+              Real Installations Across the Islands
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Every pool is different. Here's a glimpse of our recent ECO Finish work 
+              for private villas, resorts, and holiday homes.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+            {installations.map((item, index) => (
+              <div 
+                key={item.location}
+                className="group relative rounded-xl overflow-hidden shadow-soft animate-fade-up"
+                style={{ animationDelay: `${0.1 * (index + 1)}s` }}
+              >
+                <div className="aspect-[4/3]">
+                  <img 
+                    src={item.image}
+                    alt={`${item.finish} ECO Finish pool - ${item.location}`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 via-navy-950/40 to-transparent p-6">
+                  <p className="text-white font-medium">{item.location}</p>
+                  <p className="text-white/70 text-sm">{item.finish}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Button asChild size="lg">
+              <Link to="/gallery">
+                View Full Gallery
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Built for Canary Islands - Light */}
+      <section className="py-20 md:py-28">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
+            <div className="order-2 lg:order-1">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Built for the Canary Islands Climate
+                Built for Canary Islands Conditions
               </h2>
-              <p className="text-lg text-muted-foreground mb-10 leading-relaxed">
-                Our ECO Finish installations are specifically optimized for the unique 
-                conditions of island pools. From intense UV exposure to salt air, 
-                we ensure your finish performs beautifully year after year.
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Island pools face unique challenges: intense year-round sun, salt-laden air, 
+                and constant use. ECO Finish is specifically formulated to thrive in these conditions.
               </p>
-              <ul className="space-y-5 mb-10">
-                {benefits.map((benefit) => (
-                  <li key={benefit} className="flex items-center gap-4">
-                    <div className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center shrink-0">
-                      <svg className="w-3.5 h-3.5 text-primary" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                      </svg>
-                    </div>
-                    <span className="text-foreground">{benefit}</span>
-                  </li>
-                ))}
+              <ul className="space-y-4 mb-10">
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-primary" />
+                  </div>
+                  <span className="text-foreground">UV-stable pigments that won't fade or discolour</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-primary" />
+                  </div>
+                  <span className="text-foreground">Resistant to salt air corrosion and chemical damage</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-primary" />
+                  </div>
+                  <span className="text-foreground">Reduces algae growth naturally — less maintenance</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 text-primary" />
+                  </div>
+                  <span className="text-foreground">Eco-friendly application with minimal environmental impact</span>
+                </li>
               </ul>
               <Button asChild size="lg">
-                <Link to="/why-eco-finish">
-                  Learn More About ECO Finish
+                <Link to="/process">
+                  See How It's Applied
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
-            <div className="relative">
+            <div className="order-1 lg:order-2 relative">
               <img 
                 src={poolWhiteImage}
                 alt="Beautiful white finish pool with crystal clear water"
-                className="aspect-[4/3] w-full rounded-lg object-cover shadow-medium"
+                className="aspect-[4/3] w-full rounded-xl object-cover shadow-medium"
                 loading="lazy"
               />
             </div>
@@ -205,8 +257,8 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA Section - Dark accent */}
-      <section className="py-24 md:py-32">
+      {/* CTA Section - Dark accent card */}
+      <section className="py-20 md:py-28">
         <div className="container">
           <div className="rounded-xl bg-navy-900 p-12 md:p-16 text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
