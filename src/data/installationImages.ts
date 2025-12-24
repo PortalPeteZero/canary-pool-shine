@@ -96,6 +96,20 @@ import santorini1 from "@/assets/installations/santorini/santorini-1.jpg";
 import santorini2 from "@/assets/installations/santorini/santorini-2.jpg";
 import santorini3 from "@/assets/installations/santorini/santorini-3.jpg";
 
+// Brillo Blanco - Bahia Glacial
+import bahiaGlacial1 from "@/assets/installations/bahia-glacial/bahia-glacial-1.jpg";
+import bahiaGlacial2 from "@/assets/installations/bahia-glacial/bahia-glacial-2.jpg";
+import bahiaGlacial3 from "@/assets/installations/bahia-glacial/bahia-glacial-3.jpg";
+
+// Brillo Blanco - Baleares Sand
+import balearesSand1 from "@/assets/installations/baleares-sand/baleares-sand-1.jpg";
+import balearesSand2 from "@/assets/installations/baleares-sand/baleares-sand-2.jpg";
+import balearesSand3 from "@/assets/installations/baleares-sand/baleares-sand-3.jpg";
+
+// Brillo Blanco - Blanco Suave
+import blancoSuave1 from "@/assets/installations/blanco-suave/blanco-suave-1.jpg";
+import blancoSuave2 from "@/assets/installations/blanco-suave/blanco-suave-2.jpg";
+
 export const installationImages: Record<string, string[]> = {
   barbuda: [barbuda1, barbuda2, barbuda3],
   "black-absinthe": [blackAbsinthe1, blackAbsinthe2, blackAbsinthe3],
@@ -116,4 +130,8 @@ export const installationImages: Record<string, string[]> = {
   "sahara-sand": [saharaSand1, saharaSand2, saharaSand3],
   "sandy-beach": [sandyBeach1, sandyBeach2, sandyBeach3],
   santorini: [santorini1, santorini2, santorini3],
+  // Brillo Blanco
+  "bahia-glacial": [bahiaGlacial1, bahiaGlacial2, bahiaGlacial3],
+  "baleares-sand": [balearesSand1, balearesSand2, balearesSand3],
+  "blanco-suave": [blancoSuave1, blancoSuave2],
 };
