@@ -58,14 +58,17 @@ export default function WhyEcoFinish() {
       </Helmet>
 
       {/* Hero */}
-      <section className="gradient-hero py-20 md:py-28 relative overflow-hidden">
+      <section className="bg-navy-900 py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         <div className="container relative">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+            <p className="text-primary font-bold uppercase tracking-wider mb-4">
+              The ECO Finish Advantage
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Why Choose ECO Finish?
             </h1>
-            <p className="text-xl text-cyan-100 leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed">
               ECO Finish represents a breakthrough in pool surface technology. 
               Combining exceptional durability with stunning aesthetics, it's the 
               smart choice for Canary Islands pool owners who want lasting beauty 
@@ -91,13 +94,13 @@ export default function WhyEcoFinish() {
             {benefits.map((benefit, index) => (
               <div 
                 key={benefit.title}
-                className="p-6 rounded-2xl gradient-card shadow-card hover:shadow-medium transition-all duration-300 animate-fade-up"
+                className="p-6 rounded-lg bg-card border border-border shadow-card hover:shadow-medium transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <benefit.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                <h3 className="text-xl font-bold text-foreground mb-3">
                   {benefit.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -110,7 +113,7 @@ export default function WhyEcoFinish() {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-20 md:py-28 gradient-subtle">
+      <section className="py-20 md:py-28 bg-secondary">
         <div className="container">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -122,8 +125,8 @@ export default function WhyEcoFinish() {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            <div className="rounded-2xl overflow-hidden shadow-medium bg-card">
-              <div className="grid grid-cols-3 gap-4 p-4 bg-primary text-primary-foreground font-semibold">
+            <div className="rounded-lg overflow-hidden shadow-medium bg-card">
+              <div className="grid grid-cols-3 gap-4 p-4 bg-navy-900 text-white font-bold uppercase tracking-wide text-sm">
                 <div>Feature</div>
                 <div>ECO Finish</div>
                 <div>Traditional Plaster</div>
@@ -134,7 +137,7 @@ export default function WhyEcoFinish() {
                   className={`grid grid-cols-3 gap-4 p-4 ${index % 2 === 0 ? 'bg-card' : 'bg-secondary/50'}`}
                 >
                   <div className="font-medium text-foreground">{row.feature}</div>
-                  <div className="text-primary flex items-center gap-2">
+                  <div className="text-primary font-medium flex items-center gap-2">
                     <Check className="h-4 w-4 shrink-0" />
                     {row.eco}
                   </div>
@@ -158,7 +161,7 @@ export default function WhyEcoFinish() {
               or discover the stunning range of water colours available.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild variant="hero" size="lg">
+              <Button asChild size="lg">
                 <Link to="/gallery">
                   View Gallery
                   <ArrowRight className="ml-2 h-4 w-4" />

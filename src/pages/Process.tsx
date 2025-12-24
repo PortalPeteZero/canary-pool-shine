@@ -56,14 +56,17 @@ export default function Process() {
       </Helmet>
 
       {/* Hero */}
-      <section className="gradient-hero py-20 md:py-28 relative overflow-hidden">
+      <section className="bg-navy-900 py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         <div className="container relative">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+            <p className="text-primary font-bold uppercase tracking-wider mb-4">
+              Installation Process
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               How ECO Finish Is Applied
             </h1>
-            <p className="text-xl text-cyan-100 leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed">
               Our professional installation process ensures your pool receives a 
               perfect ECO Finish that will provide years of beauty and durability.
             </p>
@@ -88,8 +91,8 @@ export default function Process() {
 
                 {/* Step Number */}
                 <div className="shrink-0">
-                  <div className="w-20 h-20 rounded-2xl gradient-hero flex items-center justify-center shadow-glow">
-                    <step.icon className="h-8 w-8 text-primary-foreground" />
+                  <div className="w-20 h-20 rounded-lg bg-navy-900 flex items-center justify-center shadow-medium">
+                    <step.icon className="h-8 w-8 text-primary" />
                   </div>
                 </div>
 
@@ -103,8 +106,8 @@ export default function Process() {
                     {step.description}
                   </p>
                   {/* Image Placeholder */}
-                  <div className="aspect-[16/9] rounded-2xl bg-gradient-to-br from-cyan-100 to-cyan-200 shadow-card flex items-center justify-center">
-                    <span className="text-cyan-600 font-medium">Process Photo: {step.title}</span>
+                  <div className="aspect-[16/9] rounded-lg bg-secondary border border-border shadow-card flex items-center justify-center">
+                    <span className="text-muted-foreground font-medium">Process Photo: {step.title}</span>
                   </div>
                 </div>
               </div>
@@ -114,7 +117,7 @@ export default function Process() {
       </section>
 
       {/* What to Expect */}
-      <section className="py-20 md:py-28 gradient-subtle">
+      <section className="py-20 md:py-28 bg-secondary">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -130,17 +133,17 @@ export default function Process() {
                 {expectations.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
-                    <span className="text-foreground">{item}</span>
+                    <span className="text-foreground font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-cyan-100 to-cyan-200 shadow-medium flex items-center justify-center">
-                <span className="text-cyan-600 font-medium">Team at Work Photo</span>
+              <div className="aspect-square rounded-lg bg-card border border-border shadow-medium flex items-center justify-center">
+                <span className="text-muted-foreground font-medium">Team at Work Photo</span>
               </div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/20 rounded-2xl -z-10" />
-              <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 rounded-2xl -z-10" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-lg -z-10" />
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-navy-900/10 rounded-lg -z-10" />
             </div>
           </div>
         </div>
@@ -157,7 +160,7 @@ export default function Process() {
               Contact us today for a free consultation. We'll assess your pool, 
               discuss colour options, and provide a detailed quote.
             </p>
-            <Button asChild variant="hero" size="xl">
+            <Button asChild size="xl">
               <Link to="/contact">
                 Request a Free Quote
                 <ArrowRight className="ml-2 h-5 w-5" />

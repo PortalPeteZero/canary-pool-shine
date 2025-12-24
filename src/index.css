@@ -2,95 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 210 40% 11%;
+    --background: 0 0% 100%;
+    --foreground: 220 20% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 40% 11%;
+    --card-foreground: 220 20% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 11%;
+    --popover-foreground: 220 20% 12%;
 
-    --primary: 187 78% 37%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 36 100% 50%;
+    --primary-foreground: 220 20% 12%;
 
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 210 40% 11%;
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 220 20% 12%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 15% 45%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 36 100% 50%;
+    --accent-foreground: 220 20% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 187 78% 37%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 36 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom tokens */
-    --cyan-50: 187 80% 97%;
-    --cyan-100: 187 75% 92%;
-    --cyan-200: 187 70% 82%;
-    --cyan-500: 187 78% 42%;
-    --cyan-600: 187 78% 37%;
-    --cyan-700: 187 80% 30%;
-    --cyan-800: 187 82% 22%;
-    --cyan-900: 187 85% 15%;
+    /* Brand tokens - Orange/Amber */
+    --orange-50: 36 100% 97%;
+    --orange-100: 36 95% 90%;
+    --orange-200: 36 90% 80%;
+    --orange-400: 36 100% 55%;
+    --orange-500: 36 100% 50%;
+    --orange-600: 36 100% 45%;
+    --orange-700: 36 100% 38%;
 
-    --yellow-400: 38 92% 60%;
-    --yellow-500: 38 92% 50%;
-    --yellow-600: 38 95% 42%;
+    /* Navy/Charcoal for dark surfaces */
+    --navy-800: 220 25% 18%;
+    --navy-900: 220 30% 12%;
+    --navy-950: 220 35% 8%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(187 78% 37%) 0%, hsl(187 85% 25%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(187 30% 96%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 20% 99%) 100%);
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 12%) 0%, hsl(220 25% 18%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(220 15% 98%) 0%, hsl(220 15% 96%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 15% 99%) 100%);
     
-    --shadow-soft: 0 4px 20px -4px hsl(210 40% 11% / 0.08);
-    --shadow-medium: 0 8px 30px -6px hsl(210 40% 11% / 0.12);
-    --shadow-glow: 0 0 40px hsl(187 78% 37% / 0.15);
-    --shadow-card: 0 2px 12px -2px hsl(210 40% 11% / 0.06);
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(220 20% 12% / 0.08);
+    --shadow-medium: 0 8px 30px -6px hsl(220 20% 12% / 0.12);
+    --shadow-glow: 0 0 40px hsl(36 100% 50% / 0.2);
+    --shadow-card: 0 2px 12px -2px hsl(220 20% 12% / 0.06);
 
+    /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .dark {
-    --background: 210 40% 8%;
-    --foreground: 210 20% 98%;
+    --background: 220 30% 8%;
+    --foreground: 220 15% 98%;
 
-    --card: 210 35% 12%;
-    --card-foreground: 210 20% 98%;
+    --card: 220 25% 12%;
+    --card-foreground: 220 15% 98%;
 
-    --popover: 210 35% 12%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 220 25% 12%;
+    --popover-foreground: 220 15% 98%;
 
-    --primary: 187 75% 45%;
-    --primary-foreground: 210 40% 8%;
+    --primary: 36 100% 55%;
+    --primary-foreground: 220 30% 8%;
 
-    --secondary: 210 30% 18%;
-    --secondary-foreground: 210 20% 98%;
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 220 15% 98%;
 
-    --muted: 210 30% 18%;
-    --muted-foreground: 210 15% 60%;
+    --muted: 220 25% 18%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 38 92% 55%;
-    --accent-foreground: 210 40% 8%;
+    --accent: 36 100% 55%;
+    --accent-foreground: 220 30% 8%;
 
     --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 30% 20%;
-    --input: 210 30% 20%;
-    --ring: 187 75% 45%;
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 36 100% 55%;
   }
 }
 
@@ -101,11 +104,12 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-family: 'Montserrat', system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+    @apply font-bold tracking-tight;
+    font-family: 'Montserrat', system-ui, sans-serif;
   }
 }
 

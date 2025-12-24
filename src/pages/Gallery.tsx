@@ -105,14 +105,17 @@ export default function Gallery() {
       </Helmet>
 
       {/* Hero */}
-      <section className="gradient-hero py-20 md:py-28 relative overflow-hidden">
+      <section className="bg-navy-900 py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         <div className="container relative">
           <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6">
+            <p className="text-primary font-bold uppercase tracking-wider mb-4">
+              Our Portfolio
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Our Work
             </h1>
-            <p className="text-xl text-cyan-100 leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed">
               Explore our portfolio of ECO Finish installations across the Canary Islands. 
               Each pool showcases the transformative power of our premium finishes.
             </p>
@@ -126,7 +129,7 @@ export default function Gallery() {
           <div className="flex flex-wrap gap-2">
             <button
               onClick={() => setActiveFilter("all")}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              className={`px-4 py-2 rounded text-sm font-semibold uppercase tracking-wide transition-colors ${
                 activeFilter === "all"
                   ? "bg-primary text-primary-foreground"
                   : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
@@ -138,7 +141,7 @@ export default function Gallery() {
               <button
                 key={family.id}
                 onClick={() => setActiveFilter(family.id)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded text-sm font-semibold uppercase tracking-wide transition-colors ${
                   activeFilter === family.id
                     ? "bg-primary text-primary-foreground"
                     : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
@@ -160,7 +163,7 @@ export default function Gallery() {
                 <button
                   key={item.id}
                   onClick={() => handleItemClick(item)}
-                  className="group text-left rounded-2xl overflow-hidden bg-card shadow-card hover:shadow-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 animate-fade-up"
+                  className="group text-left rounded-lg overflow-hidden bg-card border border-border shadow-card hover:shadow-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 animate-fade-up"
                   style={{ animationDelay: `${0.05 * (index + 1)}s` }}
                   aria-label={`View ${item.title} details`}
                 >
@@ -173,7 +176,7 @@ export default function Gallery() {
                     />
                   </div>
                   <div className="p-5">
-                    <h3 className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-sm text-muted-foreground mb-2">
