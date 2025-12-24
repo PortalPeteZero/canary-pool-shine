@@ -82,20 +82,16 @@ export default function Contact() {
         />
       </Helmet>
 
-      {/* Hero - Dark */}
-      <section className="bg-navy-900 py-24 md:py-32 relative overflow-hidden">
+      {/* Hero - Dark, compact */}
+      <section className="bg-navy-900 py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         <div className="container relative">
           <div className="max-w-3xl">
-            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-4">
-              Get in Touch
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Get a Free Quote
             </h1>
-            <p className="text-xl text-white/80 leading-relaxed">
-              Ready to transform your pool? Send us your details and we'll be in touch 
-              within 24 hours to discuss your ECO Finish options.
+            <p className="text-lg text-white/75">
+              Send us your details and we'll be in touch within 24 hours.
             </p>
           </div>
         </div>
@@ -155,7 +151,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="mt-12 p-6 rounded-xl bg-surface-light border border-border/50">
+              <div className="mt-14 p-6 rounded-xl bg-surface-light border border-border/40">
                 <h3 className="font-semibold text-foreground mb-4">What happens next?</h3>
                 <ol className="space-y-4 text-sm text-muted-foreground">
                   <li className="flex items-start gap-3">
@@ -176,7 +172,7 @@ export default function Contact() {
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="p-8 md:p-10 rounded-xl bg-card border border-border/50 shadow-soft">
+              <div className="p-8 md:p-12 rounded-xl bg-card border border-border/40 shadow-card">
                 {isSubmitted ? (
                   <div className="text-center py-16">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">

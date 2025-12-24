@@ -33,47 +33,41 @@ export default function ColourSelector() {
         />
       </Helmet>
 
-      {/* Hero - Dark */}
-      <section className="bg-navy-900 py-24 md:py-32 relative overflow-hidden">
+      {/* Hero - Dark, compact */}
+      <section className="bg-navy-900 py-16 md:py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         <div className="container relative">
           <div className="max-w-3xl">
-            <p className="text-primary font-semibold uppercase tracking-wider text-sm mb-4">
-              Find Your Perfect Colour
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Water Colour Selector
             </h1>
-            <p className="text-xl text-white/80 leading-relaxed">
-              Choose from seven beautiful colour families to create your ideal pool 
-              aesthetic. Each ECO Finish creates a unique water appearance that 
-              transforms your pool into a stunning focal point.
+            <p className="text-lg text-white/75">
+              Choose from seven beautiful colour families to create your ideal pool aesthetic.
             </p>
           </div>
         </div>
       </section>
 
       {/* Disclaimer - Subtle */}
-      <section className="py-4 bg-surface-light border-b border-border/50">
+      <section className="py-4 border-b border-border/30">
         <div className="container">
-          <p className="text-sm text-muted-foreground text-center">
-            <strong className="text-foreground font-medium">Please note:</strong> Water colour appearance 
-            varies based on pool depth, lighting conditions, and surrounding environment.
+          <p className="text-xs text-muted-foreground text-center">
+            Water colour appearance varies based on pool depth, lighting conditions, and surrounding environment.
           </p>
         </div>
       </section>
 
-      {/* Colour Selector - Light */}
-      <section className="py-16 md:py-24">
+      {/* Colour Selector - Light with generous spacing */}
+      <section className="py-20 md:py-28">
         <div className="container">
           <Tabs defaultValue={finishData.families[0].id} className="w-full">
-            <div className="mb-10 overflow-x-auto pb-2">
-              <TabsList className="inline-flex h-auto p-1.5 bg-surface-light rounded-full border border-border/50">
+            <div className="mb-12 overflow-x-auto pb-2">
+              <TabsList className="inline-flex h-auto p-1 bg-surface-light rounded-full border border-border/40">
                 {finishData.families.map((family) => (
                   <TabsTrigger
                     key={family.id}
                     value={family.id}
-                    className="px-5 py-2.5 text-sm font-medium rounded-full data-[state=active]:bg-foreground data-[state=active]:text-background whitespace-nowrap transition-colors"
+                    className="px-4 py-2 text-sm font-medium rounded-full data-[state=active]:bg-foreground data-[state=active]:text-background whitespace-nowrap transition-colors"
                   >
                     {family.name}
                   </TabsTrigger>

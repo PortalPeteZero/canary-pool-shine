@@ -127,32 +127,32 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Features Section - Light */}
-      <section className="py-20 md:py-28">
+      {/* Features Section - Light, more spacing */}
+      <section className="py-24 md:py-32">
         <div className="container">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Why Choose ECO Finish?
             </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground">
               A revolutionary pool finish that combines beauty with exceptional durability.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             {features.map((feature, index) => (
               <div 
                 key={feature.title}
-                className="group p-6 rounded-lg bg-card border border-border/50 shadow-soft hover:shadow-medium transition-all duration-300 animate-fade-up"
+                className="group p-8 rounded-xl bg-card border border-border/40 shadow-card hover:shadow-soft transition-all duration-300 animate-fade-up"
                 style={{ animationDelay: `${0.1 * (index + 1)}s` }}
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                  <feature.icon className="h-6 w-6 text-primary" />
+                <div className="w-11 h-11 rounded-lg bg-primary/8 flex items-center justify-center mb-6 group-hover:bg-primary/12 transition-colors">
+                  <feature.icon className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="text-lg font-bold text-foreground mb-3">
+                <h3 className="text-lg font-semibold text-foreground mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
+                <p className="text-muted-foreground text-sm">
                   {feature.description}
                 </p>
               </div>
