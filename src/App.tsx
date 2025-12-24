@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import WhyEcoFinish from "./pages/WhyEcoFinish";
 import ColourSelector from "./pages/ColourSelector";
+import ColourDetail from "./pages/ColourDetail";
 import Gallery from "./pages/Gallery";
 import Process from "./pages/Process";
 import Contact from "./pages/Contact";
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/why-eco-finish" element={<WhyEcoFinish />} />
             <Route path="/colour-selector" element={<ColourSelector />} />
+            <Route path="/colour-selector/:finishId" element={<ColourDetail />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/process" element={<Process />} />
             <Route path="/contact" element={<Contact />} />
