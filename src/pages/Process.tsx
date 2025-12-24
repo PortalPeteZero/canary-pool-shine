@@ -3,10 +3,6 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, CheckCircle2, Droplets, PaintBucket, Sparkles, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
-import applyThermal from "@/assets/apply-thermal.jpg";
-import applyPrimer from "@/assets/apply-primer.jpg";
-import applySteps from "@/assets/apply-steps.jpg";
-import applyWall from "@/assets/apply-wall.jpg";
 import beforeAfter1 from "@/assets/before-after-1.png";
 import beforeAfter2 from "@/assets/before-after-2.png";
 
@@ -57,16 +53,9 @@ export default function Process() {
         />
       </Helmet>
 
-      {/* Hero - Dark with application image */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={applyThermal}
-            alt="ECO Finish thermal spray application in progress"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-900/80 to-transparent" />
-        </div>
+      {/* Hero - Dark with gradient */}
+      <section className="relative overflow-hidden bg-navy-900">
+        <div className="absolute inset-0 bg-gradient-to-br from-navy-950 via-navy-900 to-primary/20" />
         <div className="container relative py-28 md:py-36">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 animate-fade-up" style={{ animationDelay: "0.1s" }}>
@@ -80,48 +69,58 @@ export default function Process() {
         </div>
       </section>
 
-      {/* Application Gallery */}
+      {/* Application Videos */}
       <section className="py-16 md:py-20 bg-surface-light">
         <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            <div className="relative rounded-xl overflow-hidden shadow-medium group">
-              <img 
-                src={applyPrimer}
-                alt="Applying primer coat to pool surface"
-                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+          <div className="text-center mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Watch the Process
+            </h2>
+            <p className="text-muted-foreground">See ECO Finish application in action</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <video 
+                src="/videos/apply-primer.mov"
+                controls
+                playsInline
+                className="w-full aspect-video object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-4">
-                <p className="text-white text-sm font-medium">Primer Application</p>
+              <div className="p-4 bg-background">
+                <p className="text-foreground font-medium">Primer Application</p>
               </div>
             </div>
-            <div className="relative rounded-xl overflow-hidden shadow-medium group">
-              <img 
-                src={applyWall}
-                alt="Thermal spray application on pool wall"
-                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <video 
+                src="/videos/apply-wall.mov"
+                controls
+                playsInline
+                className="w-full aspect-video object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-4">
-                <p className="text-white text-sm font-medium">Wall Coating</p>
+              <div className="p-4 bg-background">
+                <p className="text-foreground font-medium">Wall Coating</p>
               </div>
             </div>
-            <div className="relative rounded-xl overflow-hidden shadow-medium group">
-              <img 
-                src={applyThermal}
-                alt="Thermal spray showing colour transformation"
-                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <video 
+                src="/videos/apply-thermal.mov"
+                controls
+                playsInline
+                className="w-full aspect-video object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-4">
-                <p className="text-white text-sm font-medium">Thermal Spray</p>
+              <div className="p-4 bg-background">
+                <p className="text-foreground font-medium">Thermal Spray</p>
               </div>
             </div>
-            <div className="relative rounded-xl overflow-hidden shadow-medium group">
-              <img 
-                src={applySteps}
-                alt="Finishing pool steps with ECO Finish"
-                className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500"
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <video 
+                src="/videos/apply-steps.mov"
+                controls
+                playsInline
+                className="w-full aspect-video object-cover"
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 to-transparent p-4">
-                <p className="text-white text-sm font-medium">Steps & Details</p>
+              <div className="p-4 bg-background">
+                <p className="text-foreground font-medium">Steps & Details</p>
               </div>
             </div>
           </div>
@@ -224,12 +223,12 @@ export default function Process() {
                 ))}
               </ul>
             </div>
-            <div className="relative">
-              <img 
-                src={applyWall}
-                alt="ECO Finish professional application to pool wall"
-                className="aspect-[4/3] w-full rounded-lg object-cover shadow-medium"
-                loading="lazy"
+            <div className="relative rounded-xl overflow-hidden shadow-medium">
+              <video 
+                src="/videos/apply-wall.mov"
+                controls
+                playsInline
+                className="w-full aspect-[4/3] object-cover"
               />
             </div>
           </div>
