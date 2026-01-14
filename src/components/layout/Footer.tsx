@@ -133,10 +133,20 @@ export function Footer() {
 
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="text-sm text-white/50">
-              © {new Date().getFullYear()} Canary Detect. All rights reserved.
-            </p>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <p className="text-sm text-white/50">
+                © {new Date().getFullYear()} Canary Detect. All rights reserved.
+              </p>
+              <div className="flex items-center gap-4 text-xs text-white/40">
+                <Link to="/privacy-policy" className="hover:text-white/70 transition-colors">
+                  Privacy Policy
+                </Link>
+                <Link to="/terms" className="hover:text-white/70 transition-colors">
+                  Terms of Service
+                </Link>
+              </div>
+            </div>
             <p className="text-xs text-white/40 max-w-xl">
               Water colour appearance varies based on pool depth, lighting conditions, 
               and surrounding environment. Images shown are representations only.

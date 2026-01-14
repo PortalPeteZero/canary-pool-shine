@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Check, Sun, Droplets, Shield, Leaf } from "lucide-react";
+import { ArrowRight, Clock, Droplets, Calendar, Sun, Shield, Leaf, Quote, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
@@ -149,7 +149,7 @@ export default function Index() {
                 <div className="space-y-3 mb-6">
                   <div className="flex gap-3 items-start">
                     <div className="w-6 h-6 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-primary" />
+                      <Clock className="w-3 h-3 text-primary" />
                     </div>
                     <div>
                       <span className="font-medium text-foreground">Break the Repainting Cycle</span>
@@ -158,7 +158,7 @@ export default function Index() {
                   </div>
                   <div className="flex gap-3 items-start">
                     <div className="w-6 h-6 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-primary" />
+                      <Droplets className="w-3 h-3 text-primary" />
                     </div>
                     <div>
                       <span className="font-medium text-foreground">No More Pool Draining</span>
@@ -167,13 +167,22 @@ export default function Index() {
                   </div>
                   <div className="flex gap-3 items-start">
                     <div className="w-6 h-6 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check className="w-3 h-3 text-primary" />
+                      <Calendar className="w-3 h-3 text-primary" />
                     </div>
                     <div>
                       <span className="font-medium text-foreground">Less Downtime for Rentals</span>
                       <p className="text-sm text-muted-foreground">Keep your villa pool in service longer</p>
                     </div>
                   </div>
+                </div>
+
+                {/* Testimonial Quote */}
+                <div className="bg-surface-light rounded-lg p-4 mb-6 border-l-4 border-primary">
+                  <Quote className="w-5 h-5 text-primary mb-2" />
+                  <p className="text-sm text-foreground italic mb-2">
+                    "After years of repainting every summer, ECO Finish has been a game-changer. Our pool looks stunning and we've saved thousands."
+                  </p>
+                  <p className="text-xs text-muted-foreground font-medium">— Villa Owner, Tenerife</p>
                 </div>
                 
                 <Button asChild variant="outline" size="default">
@@ -314,19 +323,30 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CTA Section - Compact */}
+      {/* CTA Section - Enhanced */}
       <section className="py-8 md:py-14">
         <div className="container">
           <AnimatedSection>
             <div className="rounded-lg bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 p-5 sm:p-6 md:p-10">
-              <div className="flex flex-col items-center gap-4 md:gap-6 md:flex-row md:justify-between">
-                <div className="text-center md:text-left">
+              <div className="flex flex-col items-center gap-4 md:gap-6 lg:flex-row lg:justify-between">
+                <div className="text-center lg:text-left">
+                  <p className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">
+                    Book This Week — Limited Availability
+                  </p>
                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-1 md:mb-2">
                     Ready to Transform Your Pool?
                   </h2>
-                  <p className="text-sm md:text-base text-muted-foreground">
+                  <p className="text-sm md:text-base text-muted-foreground mb-2">
                     Get a free, no-obligation quote. We serve all seven Canary Islands.
                   </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-sm text-muted-foreground">
+                    <a href="tel:+34646022695" className="flex items-center gap-2 hover:text-primary transition-colors">
+                      <Phone className="h-4 w-4" />
+                      <span className="font-medium">+34 646 02 26 95</span>
+                    </a>
+                    <span className="hidden sm:inline">•</span>
+                    <span className="text-xs">Typically responds within 2 hours</span>
+                  </div>
                 </div>
                 <Button asChild size="lg" className="w-full sm:w-auto shrink-0">
                   <Link to="/contact">
