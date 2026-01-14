@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Clock, Droplets, Calendar, Sun, Shield, Leaf, Quote, Phone } from "lucide-react";
+import { ArrowRight, Clock, Droplets, Calendar, Sun, Shield, Leaf, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
@@ -175,15 +175,7 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-
-                {/* Testimonial Quote */}
-                <div className="bg-surface-light rounded-lg p-4 mb-6 border-l-4 border-primary">
-                  <Quote className="w-5 h-5 text-primary mb-2" />
-                  <p className="text-sm text-foreground italic mb-2">
-                    "After years of repainting every summer, ECO Finish has been a game-changer. Our pool looks stunning and we've saved thousands."
-                  </p>
-                  <p className="text-xs text-muted-foreground font-medium">— Villa Owner, Tenerife</p>
-                </div>
+                
                 
                 <Button asChild variant="outline" size="default">
                   <Link to="/why-eco-finish">
