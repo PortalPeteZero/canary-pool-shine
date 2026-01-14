@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/canary-detect-logo.png";
@@ -35,6 +35,15 @@ export function Header() {
       {/* Top bar with contact info */}
       <div className="bg-navy-900 text-white py-2 hidden md:block">
         <div className="container flex items-center justify-end gap-6 text-sm">
+          <a 
+            href="https://wa.me/34646022695" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 hover:text-green-400 transition-colors"
+          >
+            <MessageCircle className="h-4 w-4" />
+            <span>WhatsApp</span>
+          </a>
           <a href="tel:+34646022695" className="flex items-center gap-2 hover:text-primary transition-colors">
             <Phone className="h-4 w-4" />
             <span>+34 646 02 26 95</span>
