@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ArrowRight, Star } from "lucide-react";
@@ -10,39 +9,10 @@ import santoriniImage from "@/assets/installations/santorini/santorini-1.jpg";
 // Popular finishes to show badges
 const popularFinishes = ["blue-lagoon", "mediterranean-blue", "french-grey", "sandy-beach", "santorini"];
 
-// Color family categorization
-const colorFamilies = {
-  blues: ["blue-lagoon", "mediterranean-blue", "commercial-blue", "midnight-blue", "blue-granite", "blue-mist", "pacific-blue", "marrakesh", "cabo-verde", "ice-ice-bay-bay", "bahia-glacial", "cala-macarella"],
-  neutrals: ["california-white", "french-grey", "grey-reef", "santorini", "blanco-suave", "mykonos", "mer-cendree"],
-  sands: ["sandy-beach", "sahara-sand", "kona-coast", "giallo-versilia", "barbuda", "tropea-sands", "baleares-sand", "mallorca-sand", "rivage-bronze"],
-  darks: ["perle-noire", "black-absinthe"],
-};
-
-const filterOptions = [
-  { value: "all", label: "All Colours" },
-  { value: "blues", label: "Blues & Greens" },
-  { value: "neutrals", label: "Whites & Greys" },
-  { value: "sands", label: "Sands & Naturals" },
-  { value: "darks", label: "Dark & Dramatic" },
-];
-
 export default function ColourSelector() {
-  const [activeFilter, setActiveFilter] = useState<string>("all");
-
-  // Filter finishes by color family
-  const filterByFamily = (finishes: typeof finishData.finishes) => {
-    if (activeFilter === "all") return finishes;
-    const familyIds = colorFamilies[activeFilter as keyof typeof colorFamilies] || [];
-    return finishes.filter((finish) => familyIds.includes(finish.id));
-  };
-
   // Separate Brillo Blanco finishes from other finishes
-  const brilloBlancoFinishes = filterByFamily(
-    finishData.finishes.filter((finish) => finish.productLine === "Brillo Blanco")
-  );
-  const otherFinishes = filterByFamily(
-    finishData.finishes.filter((finish) => finish.productLine !== "Brillo Blanco")
-  );
+  const brilloBlancoFinishes = finishData.finishes.filter((finish) => finish.productLine === "Brillo Blanco");
+  const otherFinishes = finishData.finishes.filter((finish) => finish.productLine !== "Brillo Blanco");
 
   const FinishCard = ({ finish }: { finish: typeof finishData.finishes[0] }) => {
     const isPopular = popularFinishes.includes(finish.id);
@@ -113,27 +83,12 @@ export default function ColourSelector() {
         </div>
       </section>
 
-      {/* Disclaimer + Filters */}
+      {/* Disclaimer */}
       <section className="py-4 border-b border-border/30">
         <div className="container">
-          <p className="text-xs text-muted-foreground text-center mb-4">
+          <p className="text-xs text-muted-foreground text-center">
             Water colour appearance varies based on pool depth, lighting conditions, and surrounding environment.
           </p>
-          <div className="flex flex-wrap justify-center gap-2">
-            {filterOptions.map((option) => (
-              <button
-                key={option.value}
-                onClick={() => setActiveFilter(option.value)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeFilter === option.value
-                    ? "bg-foreground text-background"
-                    : "text-muted-foreground hover:text-foreground bg-surface-light"
-                }`}
-              >
-                {option.label}
-              </button>
-            ))}
-          </div>
         </div>
       </section>
 
