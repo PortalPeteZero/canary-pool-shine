@@ -191,10 +191,10 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1 text-sm md:text-base">Phone</h3>
                     <a 
-                      href="tel:+34646022695"
+                      href="tel:+34711051071"
                       className="text-sm md:text-base text-foreground hover:text-primary transition-colors"
                     >
-                      +34 646 02 26 95
+                      +34 711 05 10 71
                     </a>
                   </div>
                 </div>

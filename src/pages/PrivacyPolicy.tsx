@@ -58,7 +58,7 @@ export default function PrivacyPolicy() {
             </p>
             <p>
               Email: info@canary-detect.com<br />
-              Phone: +34 646 02 26 95
+              Phone: +34 711 05 10 71
             </p>
           </div>
         </div>

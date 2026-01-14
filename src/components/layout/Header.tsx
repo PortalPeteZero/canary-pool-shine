@@ -36,7 +36,7 @@ export function Header() {
       <div className="bg-navy-900 text-white py-2 hidden md:block">
         <div className="container flex items-center justify-end gap-6 text-sm">
           <a 
-            href="https://wa.me/34646022695" 
+            href="https://wa.me/34711051071" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-green-400 transition-colors"
@@ -44,9 +44,9 @@ export function Header() {
             <MessageCircle className="h-4 w-4" />
             <span>WhatsApp</span>
           </a>
-          <a href="tel:+34646022695" className="flex items-center gap-2 hover:text-primary transition-colors">
+          <a href="tel:+34711051071" className="flex items-center gap-2 hover:text-primary transition-colors">
             <Phone className="h-4 w-4" />
-            <span>+34 646 02 26 95</span>
+            <span>+34 711 05 10 71</span>
           </a>
           <a href="mailto:info@canary-detect.com" className="flex items-center gap-2 hover:text-primary transition-colors">
             <Mail className="h-4 w-4" />
@@ -122,9 +122,9 @@ export function Header() {
               </Link>
             ))}
             <div className="pt-4 space-y-3">
-              <a href="tel:+34646022695" className="flex items-center gap-2 px-4 py-2 text-sm text-muted-foreground">
+              <a href="tel:+34711051071" className="flex items-center gap-2 px-4 py-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>+34 646 02 26 95</span>
+                <span>+34 711 05 10 71</span>
               </a>
               <Button asChild size="lg" className="w-full">
                 <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>

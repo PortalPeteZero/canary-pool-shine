@@ -332,9 +332,9 @@ export default function Index() {
                     Get a free, no-obligation quote. We serve all seven Canary Islands.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-sm text-muted-foreground">
-                    <a href="tel:+34646022695" className="flex items-center gap-2 hover:text-primary transition-colors">
+                    <a href="tel:+34711051071" className="flex items-center gap-2 hover:text-primary transition-colors">
                       <Phone className="h-4 w-4" />
-                      <span className="font-medium">+34 646 02 26 95</span>
+                      <span className="font-medium">+34 711 05 10 71</span>
                     </a>
                     <span className="hidden sm:inline">•</span>
                     <span className="text-xs">Typically responds within 2 hours</span>
