@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -16,10 +16,22 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
+    <header className={cn(
+      "sticky top-0 z-50 w-full bg-background border-b border-border transition-shadow duration-300",
+      isScrolled && "shadow-medium"
+    )}>
       {/* Top bar with contact info */}
       <div className="bg-navy-900 text-white py-2 hidden md:block">
         <div className="container flex items-center justify-end gap-6 text-sm">
@@ -51,10 +63,11 @@ export function Header() {
               key={item.name}
               to={item.href}
               className={cn(
-                "px-4 py-2 text-sm font-semibold uppercase tracking-wide transition-colors",
+                "relative px-4 py-2 text-sm font-semibold uppercase tracking-wide transition-colors",
+                "after:absolute after:bottom-0 after:left-4 after:right-4 after:h-0.5 after:bg-primary after:origin-left after:transition-transform after:duration-300",
                 location.pathname === item.href
-                  ? "text-primary"
-                  : "text-foreground hover:text-primary"
+                  ? "text-primary after:scale-x-100"
+                  : "text-foreground hover:text-primary after:scale-x-0 hover:after:scale-x-100"
               )}
             >
               {item.name}

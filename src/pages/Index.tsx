@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { ArrowRight, Check, Sun, Droplets, Shield, Leaf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
+import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
 // Gallery images for visual sections
 import galleryGreySteps from "@/assets/gallery-grey-steps.jpg";
@@ -105,226 +106,237 @@ export default function Index() {
       {/* Why ECO Finish - Compact Image + Text Layout */}
       <section className="py-12 md:py-16">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Image Grid */}
-            <div className="grid grid-cols-2 gap-3">
-              <img 
-                src={blueLagoon1} 
-                alt="Blue Lagoon pool finish" 
-                className="w-full aspect-[4/3] object-cover rounded-lg"
-                loading="lazy"
-              />
-              <img 
-                src={mediterraneanBlue1} 
-                alt="Mediterranean Blue pool finish" 
-                className="w-full aspect-[4/3] object-cover rounded-lg"
-                loading="lazy"
-              />
-              <img 
-                src={santorini1} 
-                alt="Santorini pool finish" 
-                className="w-full aspect-[4/3] object-cover rounded-lg"
-                loading="lazy"
-              />
-              <img 
-                src={konaCoast1} 
-                alt="Kona Coast pool finish" 
-                className="w-full aspect-[4/3] object-cover rounded-lg"
-                loading="lazy"
-              />
-            </div>
-            
-            {/* Content */}
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                Why Pool Owners Are Switching to ECO Finish
-              </h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Fibreglass pools with gel coat or painted surfaces often need resurfacing every 1–2 years. 
-                ECO Finish breaks that cycle with a coating designed to last.
-              </p>
-              
-              <div className="space-y-3 mb-6">
-                <div className="flex gap-3 items-start">
-                  <div className="w-6 h-6 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-primary" />
-                  </div>
-                  <div>
-                    <span className="font-medium text-foreground">Break the Repainting Cycle</span>
-                    <p className="text-sm text-muted-foreground">Lasts 10+ years vs 1-2 years for gel coat</p>
-                  </div>
-                </div>
-                <div className="flex gap-3 items-start">
-                  <div className="w-6 h-6 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-primary" />
-                  </div>
-                  <div>
-                    <span className="font-medium text-foreground">No More Pool Draining</span>
-                    <p className="text-sm text-muted-foreground">Save water costs in the Canary Islands</p>
-                  </div>
-                </div>
-                <div className="flex gap-3 items-start">
-                  <div className="w-6 h-6 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-primary" />
-                  </div>
-                  <div>
-                    <span className="font-medium text-foreground">Less Downtime for Rentals</span>
-                    <p className="text-sm text-muted-foreground">Keep your villa pool in service longer</p>
-                  </div>
-                </div>
+          <AnimatedSection>
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              {/* Image Grid */}
+              <div className="grid grid-cols-2 gap-3">
+                <img 
+                  src={blueLagoon1} 
+                  alt="Blue Lagoon pool finish" 
+                  className="w-full aspect-[4/3] object-cover rounded-lg hover:scale-[1.02] transition-transform duration-300"
+                  loading="lazy"
+                />
+                <img 
+                  src={mediterraneanBlue1} 
+                  alt="Mediterranean Blue pool finish" 
+                  className="w-full aspect-[4/3] object-cover rounded-lg hover:scale-[1.02] transition-transform duration-300"
+                  loading="lazy"
+                />
+                <img 
+                  src={santorini1} 
+                  alt="Santorini pool finish" 
+                  className="w-full aspect-[4/3] object-cover rounded-lg hover:scale-[1.02] transition-transform duration-300"
+                  loading="lazy"
+                />
+                <img 
+                  src={konaCoast1} 
+                  alt="Kona Coast pool finish" 
+                  className="w-full aspect-[4/3] object-cover rounded-lg hover:scale-[1.02] transition-transform duration-300"
+                  loading="lazy"
+                />
               </div>
               
-              <Button asChild variant="outline" size="default">
-                <Link to="/why-eco-finish">
-                  Learn More
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              {/* Content */}
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                  Why Pool Owners Are Switching to ECO Finish
+                </h2>
+                <p className="text-muted-foreground mb-6 leading-relaxed">
+                  Fibreglass pools with gel coat or painted surfaces often need resurfacing every 1–2 years. 
+                  ECO Finish breaks that cycle with a coating designed to last.
+                </p>
+                
+                <div className="space-y-3 mb-6">
+                  <div className="flex gap-3 items-start">
+                    <div className="w-6 h-6 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <div>
+                      <span className="font-medium text-foreground">Break the Repainting Cycle</span>
+                      <p className="text-sm text-muted-foreground">Lasts 10+ years vs 1-2 years for gel coat</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3 items-start">
+                    <div className="w-6 h-6 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <div>
+                      <span className="font-medium text-foreground">No More Pool Draining</span>
+                      <p className="text-sm text-muted-foreground">Save water costs in the Canary Islands</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-3 items-start">
+                    <div className="w-6 h-6 rounded-full bg-primary/12 flex items-center justify-center shrink-0 mt-0.5">
+                      <Check className="w-3 h-3 text-primary" />
+                    </div>
+                    <div>
+                      <span className="font-medium text-foreground">Less Downtime for Rentals</span>
+                      <p className="text-sm text-muted-foreground">Keep your villa pool in service longer</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <Button asChild variant="outline" size="default">
+                  <Link to="/why-eco-finish">
+                    Learn More
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Real Installations - Larger Images, Compact */}
       <section className="py-10 md:py-14 bg-surface-light">
         <div className="container">
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                Real Installations Across the Islands
-              </h2>
-              <p className="text-muted-foreground">
-                Recent ECO Finish work for private villas, resorts, and holiday homes.
-              </p>
-            </div>
-            <Button asChild variant="outline" size="default" className="shrink-0">
-              <Link to="/gallery">
-                View Full Gallery
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-4">
-            {installations.map((item) => (
-              <div 
-                key={item.location}
-                className="group relative rounded-lg overflow-hidden shadow-soft"
-              >
-                <div className="aspect-[4/3]">
-                  <img 
-                    src={item.image}
-                    alt={`${item.finish} ECO Finish pool - ${item.location}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 via-navy-950/40 to-transparent p-4">
-                  <p className="text-white font-medium text-sm">{item.location}</p>
-                  <p className="text-white/70 text-xs">{item.finish}</p>
-                </div>
+          <AnimatedSection>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                  Real Installations Across the Islands
+                </h2>
+                <p className="text-muted-foreground">
+                  Recent ECO Finish work for private villas, resorts, and holiday homes.
+                </p>
               </div>
-            ))}
-          </div>
+              <Button asChild variant="outline" size="default" className="shrink-0">
+                <Link to="/gallery">
+                  View Full Gallery
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-4">
+              {installations.map((item) => (
+                <Link 
+                  to="/gallery"
+                  key={item.location}
+                  className="group relative rounded-lg overflow-hidden shadow-soft cursor-pointer"
+                >
+                  <div className="aspect-[4/3]">
+                    <img 
+                      src={item.image}
+                      alt={`${item.finish} ECO Finish pool - ${item.location}`}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-navy-950/80 via-navy-950/40 to-transparent p-4">
+                    <p className="text-white font-medium text-sm">{item.location}</p>
+                    <p className="text-white/70 text-xs">{item.finish}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Built for Canary Islands - Image-First Layout */}
       <section className="py-10 md:py-14">
         <div className="container">
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 items-center">
-            {/* Large Hero Image */}
-            <div className="lg:col-span-3 relative order-2 md:order-1">
-              <img 
-                src={frenchGrey1}
-                alt="Beautiful ECO Finish pool with crystal clear water"
-                className="aspect-[4/3] md:aspect-[16/10] w-full rounded-lg object-cover shadow-medium"
-                loading="lazy"
-              />
-              <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 md:px-4 md:py-2 shadow-soft">
-                <p className="text-xs md:text-sm font-medium text-foreground">10+ Year Durability</p>
-                <p className="text-[10px] md:text-xs text-muted-foreground">Built for island conditions</p>
-              </div>
-            </div>
-            
-            {/* Content + Benefits */}
-            <div className="lg:col-span-2 order-1 md:order-2">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3">
-                Built for Canary Islands Conditions
-              </h2>
-              <p className="text-muted-foreground mb-4 md:mb-5 text-sm leading-relaxed">
-                Island pools face unique challenges: intense year-round sun, salt-laden air, 
-                and constant use. ECO Finish thrives in these conditions.
-              </p>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 mb-4 md:mb-5">
-                {benefits.map((benefit) => (
-                  <div key={benefit.text} className="flex items-center gap-2 bg-surface-light rounded-lg p-2.5 md:p-3">
-                    <benefit.icon className="w-4 h-4 text-primary shrink-0" />
-                    <span className="text-xs font-medium text-foreground">{benefit.text}</span>
-                  </div>
-                ))}
+          <AnimatedSection>
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 items-center">
+              {/* Large Hero Image */}
+              <div className="lg:col-span-3 relative order-2 md:order-1">
+                <img 
+                  src={frenchGrey1}
+                  alt="Beautiful ECO Finish pool with crystal clear water"
+                  className="aspect-[4/3] md:aspect-[16/10] w-full rounded-lg object-cover shadow-medium hover:shadow-lg transition-shadow duration-300"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 md:px-4 md:py-2 shadow-soft">
+                  <p className="text-xs md:text-sm font-medium text-foreground">10+ Year Durability</p>
+                  <p className="text-[10px] md:text-xs text-muted-foreground">Built for island conditions</p>
+                </div>
               </div>
               
-              <Button asChild size="default" className="w-full sm:w-auto">
-                <Link to="/process">
-                  See How It's Applied
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+              {/* Content + Benefits */}
+              <div className="lg:col-span-2 order-1 md:order-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-3">
+                  Built for Canary Islands Conditions
+                </h2>
+                <p className="text-muted-foreground mb-4 md:mb-5 text-sm leading-relaxed">
+                  Island pools face unique challenges: intense year-round sun, salt-laden air, 
+                  and constant use. ECO Finish thrives in these conditions.
+                </p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3 mb-4 md:mb-5">
+                  {benefits.map((benefit) => (
+                    <div key={benefit.text} className="flex items-center gap-2 bg-surface-light rounded-lg p-2.5 md:p-3 hover:bg-primary/5 transition-colors duration-200">
+                      <benefit.icon className="w-4 h-4 text-primary shrink-0" />
+                      <span className="text-xs font-medium text-foreground">{benefit.text}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <Button asChild size="default" className="w-full sm:w-auto">
+                  <Link to="/process">
+                    See How It's Applied
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* Colour Preview Strip */}
       <section className="py-6 md:py-8 bg-navy-900">
         <div className="container">
-          <div className="flex flex-col items-center gap-4 md:gap-6 md:flex-row md:justify-between">
-            <div className="text-center md:text-left">
-              <h3 className="text-lg md:text-xl font-bold text-white mb-1">21+ Colour Options</h3>
-              <p className="text-white/70 text-xs md:text-sm">From vibrant blues to natural sands</p>
+          <AnimatedSection>
+            <div className="flex flex-col items-center gap-4 md:gap-6 md:flex-row md:justify-between">
+              <div className="text-center md:text-left">
+                <h3 className="text-lg md:text-xl font-bold text-white mb-1">21+ Colour Options</h3>
+                <p className="text-white/70 text-xs md:text-sm">From vibrant blues to natural sands</p>
+              </div>
+              
+              <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto max-w-full pb-1">
+                <img src={blueLagoon1} alt="Blue Lagoon" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0 hover:scale-110 transition-transform duration-200" />
+                <img src={santorini1} alt="Santorini" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0 hover:scale-110 transition-transform duration-200" />
+                <img src={konaCoast1} alt="Kona Coast" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0 hover:scale-110 transition-transform duration-200" />
+                <img src={pacificBlue1} alt="Pacific Blue" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0 hover:scale-110 transition-transform duration-200" />
+                <img src={frenchGrey1} alt="French Grey" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0 hidden xs:block sm:block hover:scale-110 transition-transform duration-200" />
+              </div>
+              
+              <Button asChild variant="outline-light" size="default" className="w-full sm:w-auto">
+                <Link to="/colour-selector">
+                  Explore Colours
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
-            
-            <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto max-w-full pb-1">
-              <img src={blueLagoon1} alt="Blue Lagoon" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0" />
-              <img src={santorini1} alt="Santorini" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0" />
-              <img src={konaCoast1} alt="Kona Coast" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0" />
-              <img src={pacificBlue1} alt="Pacific Blue" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0" />
-              <img src={frenchGrey1} alt="French Grey" className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-lg object-cover shrink-0 hidden xs:block sm:block" />
-            </div>
-            
-            <Button asChild variant="outline-light" size="default" className="w-full sm:w-auto">
-              <Link to="/colour-selector">
-                Explore Colours
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
 
       {/* CTA Section - Compact */}
       <section className="py-8 md:py-14">
         <div className="container">
-          <div className="rounded-lg bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 p-5 sm:p-6 md:p-10">
-            <div className="flex flex-col items-center gap-4 md:gap-6 md:flex-row md:justify-between">
-              <div className="text-center md:text-left">
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-1 md:mb-2">
-                  Ready to Transform Your Pool?
-                </h2>
-                <p className="text-sm md:text-base text-muted-foreground">
-                  Get a free, no-obligation quote. We serve all seven Canary Islands.
-                </p>
+          <AnimatedSection>
+            <div className="rounded-lg bg-gradient-to-r from-primary/10 via-primary/5 to-transparent border border-primary/20 p-5 sm:p-6 md:p-10">
+              <div className="flex flex-col items-center gap-4 md:gap-6 md:flex-row md:justify-between">
+                <div className="text-center md:text-left">
+                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-1 md:mb-2">
+                    Ready to Transform Your Pool?
+                  </h2>
+                  <p className="text-sm md:text-base text-muted-foreground">
+                    Get a free, no-obligation quote. We serve all seven Canary Islands.
+                  </p>
+                </div>
+                <Button asChild size="lg" className="w-full sm:w-auto shrink-0">
+                  <Link to="/contact">
+                    Request Your Free Quote
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
               </div>
-              <Button asChild size="lg" className="w-full sm:w-auto shrink-0">
-                <Link to="/contact">
-                  Request Your Free Quote
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
             </div>
-          </div>
+          </AnimatedSection>
         </div>
       </section>
     </Layout>
