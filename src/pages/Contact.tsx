@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MapPin, Phone, Mail, Send, CheckCircle2 } from "lucide-react";
+import { MapPin, Phone, Mail, Send, CheckCircle2, Upload, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Layout } from "@/components/layout/Layout";
@@ -32,12 +33,28 @@ const poolTypes = [
   "Other",
 ];
 
+const poolSizes = [
+  "Small (under 20m²)",
+  "Medium (20-50m²)",
+  "Large (50-100m²)",
+  "Very Large (over 100m²)",
+  "Not sure",
+];
+
+const contactMethods = [
+  { value: "phone", label: "Phone" },
+  { value: "email", label: "Email" },
+  { value: "whatsapp", label: "WhatsApp" },
+];
+
 const contactSchema = z.object({
   name: z.string().trim().min(2, "Name must be at least 2 characters").max(100, "Name must be less than 100 characters"),
   email: z.string().trim().email("Please enter a valid email address").max(255, "Email must be less than 255 characters"),
   phone: z.string().trim().optional(),
   island: z.string().min(1, "Please select an island"),
   poolType: z.string().min(1, "Please select a pool type"),
+  poolSize: z.string().optional(),
+  preferredContact: z.string().optional(),
   message: z.string().trim().min(10, "Message must be at least 10 characters").max(1000, "Message must be less than 1000 characters"),
   consent: z.boolean().refine((val) => val === true, "You must agree to be contacted"),
 });
@@ -46,6 +63,8 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const { toast } = useToast();
 
   const form = useForm<ContactFormData>({
@@ -56,14 +75,48 @@ export default function Contact() {
       phone: "",
       island: "",
       poolType: "",
+      poolSize: "",
+      preferredContact: "email",
       message: "",
       consent: false,
     },
   });
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files) {
+      const newFiles = Array.from(files).filter((file) => {
+        // Validate file type and size (max 5MB)
+        const validTypes = ["image/jpeg", "image/png", "image/webp"];
+        if (!validTypes.includes(file.type)) {
+          toast({
+            title: "Invalid file type",
+            description: "Please upload JPG, PNG, or WebP images only.",
+            variant: "destructive",
+          });
+          return false;
+        }
+        if (file.size > 5 * 1024 * 1024) {
+          toast({
+            title: "File too large",
+            description: "Please upload images under 5MB.",
+            variant: "destructive",
+          });
+          return false;
+        }
+        return true;
+      });
+      setUploadedFiles((prev) => [...prev, ...newFiles].slice(0, 5)); // Max 5 files
+    }
+  };
+
+  const removeFile = (index: number) => {
+    setUploadedFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
   const onSubmit = async (data: ContactFormData) => {
-    // In production, this would send to a backend
-    console.log("Form submitted:", { ...data, email: "[REDACTED]", phone: "[REDACTED]" });
+    // In production, this would send to a backend with file uploads
+    console.log("Form submitted:", { ...data, email: "[REDACTED]", phone: "[REDACTED]", files: uploadedFiles.length });
     
     toast({
       title: "Enquiry Received",
@@ -279,30 +332,123 @@ export default function Contact() {
                           />
                         </div>
 
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+                          <FormField
+                            control={form.control}
+                            name="poolType"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Pool Type *</FormLabel>
+                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                  <FormControl>
+                                    <SelectTrigger>
+                                      <SelectValue placeholder="Select pool type" />
+                                    </SelectTrigger>
+                                  </FormControl>
+                                  <SelectContent>
+                                    {poolTypes.map((type) => (
+                                      <SelectItem key={type} value={type}>
+                                        {type}
+                                      </SelectItem>
+                                    ))}
+                                  </SelectContent>
+                                </Select>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name="poolSize"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Pool Size</FormLabel>
+                                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                  <FormControl>
+                                    <SelectTrigger>
+                                      <SelectValue placeholder="Select pool size" />
+                                    </SelectTrigger>
+                                  </FormControl>
+                                  <SelectContent>
+                                    {poolSizes.map((size) => (
+                                      <SelectItem key={size} value={size}>
+                                        {size}
+                                      </SelectItem>
+                                    ))}
+                                  </SelectContent>
+                                </Select>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
+
+                        {/* Preferred Contact Method */}
                         <FormField
                           control={form.control}
-                          name="poolType"
+                          name="preferredContact"
                           render={({ field }) => (
                             <FormItem>
-                              <FormLabel>Pool Type *</FormLabel>
-                              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                                <FormControl>
-                                  <SelectTrigger>
-                                    <SelectValue placeholder="Select pool type" />
-                                  </SelectTrigger>
-                                </FormControl>
-                                <SelectContent>
-                                  {poolTypes.map((type) => (
-                                    <SelectItem key={type} value={type}>
-                                      {type}
-                                    </SelectItem>
+                              <FormLabel>Preferred Contact Method</FormLabel>
+                              <FormControl>
+                                <RadioGroup
+                                  onValueChange={field.onChange}
+                                  defaultValue={field.value}
+                                  className="flex flex-wrap gap-4"
+                                >
+                                  {contactMethods.map((method) => (
+                                    <div key={method.value} className="flex items-center space-x-2">
+                                      <RadioGroupItem value={method.value} id={method.value} />
+                                      <label htmlFor={method.value} className="text-sm font-normal cursor-pointer">
+                                        {method.label}
+                                      </label>
+                                    </div>
                                   ))}
-                                </SelectContent>
-                              </Select>
+                                </RadioGroup>
+                              </FormControl>
                               <FormMessage />
                             </FormItem>
                           )}
                         />
+
+                        {/* File Upload */}
+                        <div className="space-y-2">
+                          <label className="text-sm font-medium">Pool Photos (optional)</label>
+                          <div 
+                            className="border-2 border-dashed border-border rounded-lg p-4 text-center cursor-pointer hover:border-primary/50 transition-colors"
+                            onClick={() => fileInputRef.current?.click()}
+                          >
+                            <input
+                              ref={fileInputRef}
+                              type="file"
+                              accept="image/jpeg,image/png,image/webp"
+                              multiple
+                              onChange={handleFileChange}
+                              className="hidden"
+                            />
+                            <Upload className="w-8 h-8 mx-auto text-muted-foreground mb-2" />
+                            <p className="text-sm text-muted-foreground">
+                              Click to upload pool photos (max 5 images, 5MB each)
+                            </p>
+                          </div>
+                          {uploadedFiles.length > 0 && (
+                            <div className="flex flex-wrap gap-2 mt-2">
+                              {uploadedFiles.map((file, index) => (
+                                <div key={index} className="flex items-center gap-2 bg-surface-light px-3 py-1.5 rounded-full text-sm">
+                                  <span className="truncate max-w-[150px]">{file.name}</span>
+                                  <button
+                                    type="button"
+                                    onClick={() => removeFile(index)}
+                                    className="text-muted-foreground hover:text-destructive transition-colors"
+                                  >
+                                    <X className="w-4 h-4" />
+                                  </button>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
 
                         <FormField
                           control={form.control}

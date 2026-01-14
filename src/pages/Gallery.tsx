@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Layout } from "@/components/layout/Layout";
 import { GalleryModal } from "@/components/shared/GalleryModal";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import finishData from "@/data/finishes.json";
 
 // Import gallery images
@@ -80,19 +82,40 @@ const galleryItems: GalleryItem[] = [
   },
 ];
 
+// Get unique islands for filtering
+const islands = [...new Set(galleryItems.map((item) => item.location))];
+
 export default function Gallery() {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState<string>("all");
+  const [islandFilter, setIslandFilter] = useState<string>("all");
 
   const handleItemClick = (item: GalleryItem) => {
     setSelectedItem(item);
     setModalOpen(true);
   };
 
-  const filteredItems = activeFilter === "all" 
-    ? galleryItems 
-    : galleryItems.filter((item) => item.family === activeFilter);
+  const handleLightboxOpen = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const handleLightboxNav = (direction: "prev" | "next") => {
+    if (direction === "prev") {
+      setLightboxIndex((prev) => (prev === 0 ? filteredItems.length - 1 : prev - 1));
+    } else {
+      setLightboxIndex((prev) => (prev === filteredItems.length - 1 ? 0 : prev + 1));
+    }
+  };
+
+  const filteredItems = galleryItems.filter((item) => {
+    const matchesFamily = activeFilter === "all" || item.family === activeFilter;
+    const matchesIsland = islandFilter === "all" || item.location === islandFilter;
+    return matchesFamily && matchesIsland;
+  });
 
   return (
     <Layout>
@@ -132,30 +155,60 @@ export default function Gallery() {
       {/* Filters - Mobile scrollable */}
       <section className="py-4 border-b border-border/30 overflow-x-auto">
         <div className="container">
-          <div className="flex gap-2 min-w-max">
-            <button
-              onClick={() => setActiveFilter("all")}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                activeFilter === "all"
-                  ? "bg-foreground text-background"
-                  : "text-muted-foreground hover:text-foreground bg-surface-light"
-              }`}
-            >
-              All
-            </button>
-            {["aquaBRIGHT", "polyFIBRO", "Commercial"].map((productLine) => (
+          <div className="flex flex-col sm:flex-row gap-3">
+            {/* Product line filter */}
+            <div className="flex gap-2 min-w-max">
               <button
-                key={productLine}
-                onClick={() => setActiveFilter(productLine)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
-                  activeFilter === productLine
+                onClick={() => setActiveFilter("all")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeFilter === "all"
                     ? "bg-foreground text-background"
                     : "text-muted-foreground hover:text-foreground bg-surface-light"
                 }`}
               >
-                {productLine}
+                All Products
               </button>
-            ))}
+              {["aquaBRIGHT", "polyFIBRO", "Commercial"].map((productLine) => (
+                <button
+                  key={productLine}
+                  onClick={() => setActiveFilter(productLine)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                    activeFilter === productLine
+                      ? "bg-foreground text-background"
+                      : "text-muted-foreground hover:text-foreground bg-surface-light"
+                  }`}
+                >
+                  {productLine}
+                </button>
+              ))}
+            </div>
+            
+            {/* Island filter */}
+            <div className="flex gap-2 min-w-max sm:border-l sm:border-border/30 sm:pl-3">
+              <button
+                onClick={() => setIslandFilter("all")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  islandFilter === "all"
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground bg-surface-light"
+                }`}
+              >
+                All Islands
+              </button>
+              {islands.map((island) => (
+                <button
+                  key={island}
+                  onClick={() => setIslandFilter(island)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap ${
+                    islandFilter === island
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground bg-surface-light"
+                  }`}
+                >
+                  {island}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -166,30 +219,36 @@ export default function Gallery() {
           {filteredItems.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
               {filteredItems.map((item, index) => (
-                <button
+                <div
                   key={item.id}
-                  onClick={() => handleItemClick(item)}
-                  className="group text-left focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4 animate-fade-up"
+                  className="group animate-fade-up"
                   style={{ animationDelay: `${0.05 * (index + 1)}s` }}
-                  aria-label={`View ${item.title} details`}
                 >
-                  <div className="aspect-[4/3] overflow-hidden rounded-xl mb-4">
+                  <button
+                    onClick={() => handleLightboxOpen(index)}
+                    className="w-full aspect-[4/3] overflow-hidden rounded-xl mb-4 cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-4"
+                    aria-label={`View ${item.title} in lightbox`}
+                  >
                     <img 
                       src={item.image}
                       alt={`${item.finish} finish pool in ${item.location}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       loading="lazy"
                     />
-                  </div>
-                  <div>
+                  </button>
+                  <button
+                    onClick={() => handleItemClick(item)}
+                    className="text-left w-full focus:outline-none"
+                    aria-label={`View ${item.title} details`}
+                  >
                     <h3 className="text-base font-semibold text-foreground mb-1 group-hover:text-primary transition-colors">
                       {item.title}
                     </h3>
                     <p className="text-sm text-muted-foreground">
                       {item.location} · {item.finish}
                     </p>
-                  </div>
-                </button>
+                  </button>
+                </div>
               ))}
             </div>
           ) : (
@@ -211,6 +270,51 @@ export default function Gallery() {
         open={modalOpen}
         onOpenChange={setModalOpen}
       />
+
+      {/* Lightbox */}
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent className="max-w-6xl p-0 bg-black/95 border-none">
+          <button
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-4 right-4 z-50 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center"
+            aria-label="Close lightbox"
+          >
+            <X className="w-5 h-5 text-white" />
+          </button>
+          
+          {filteredItems[lightboxIndex] && (
+            <div className="relative">
+              <img
+                src={filteredItems[lightboxIndex].image}
+                alt={`${filteredItems[lightboxIndex].finish} finish pool`}
+                className="w-full h-auto max-h-[85vh] object-contain"
+              />
+              
+              {/* Nav buttons */}
+              <button
+                onClick={() => handleLightboxNav("prev")}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-6 h-6 text-white" />
+              </button>
+              <button
+                onClick={() => handleLightboxNav("next")}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 transition-colors flex items-center justify-center"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-6 h-6 text-white" />
+              </button>
+              
+              {/* Caption */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                <h3 className="text-white font-semibold">{filteredItems[lightboxIndex].title}</h3>
+                <p className="text-white/70 text-sm">{filteredItems[lightboxIndex].location} · {filteredItems[lightboxIndex].finish}</p>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </Layout>
   );
 }
