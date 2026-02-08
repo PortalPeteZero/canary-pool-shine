@@ -61,17 +61,52 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Service Areas */}
+          {/* Our Sites */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-primary">
-              Service Areas
+              Our Sites
             </h3>
             <ul className="mt-4 space-y-3">
-              {navigation.islands.map((island) => (
-                <li key={island} className="text-sm text-white/70">
-                  {island}
-                </li>
-              ))}
+              <li>
+                <a href="https://canary-detect.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-primary transition-colors">
+                  canary-detect.com
+                </a>
+              </li>
+              <li>
+                <a href="https://theleakyfinders.es" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-primary transition-colors">
+                  theleakyfinders.es
+                </a>
+              </li>
+              <li>
+                <a href="https://leak-detective.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-primary transition-colors">
+                  leak-detective.com
+                </a>
+              </li>
+              <li>
+                <a href="https://leakguardlanzarote.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-primary transition-colors">
+                  leakguardlanzarote.com
+                </a>
+              </li>
+              <li>
+                <a href="https://lanzarotewater.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-primary transition-colors">
+                  lanzarotewater.com
+                </a>
+              </li>
+              <li>
+                <a href="https://canary-detect-coatings.es" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-primary transition-colors">
+                  canary-detect-coatings.es
+                </a>
+              </li>
+              <li>
+                <a href="https://finchyfairytales.com" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-primary transition-colors">
+                  finchyfairytales.com
+                </a>
+              </li>
+              <li>
+                <a href="https://elatico.org" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-primary transition-colors">
+                  elatico.org
+                </a>
+              </li>
             </ul>
           </div>
 
