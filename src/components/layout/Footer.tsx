@@ -64,7 +64,7 @@ export function Footer() {
           {/* Our Sites */}
           <div>
             <h3 className="text-sm font-bold uppercase tracking-wider text-primary">
-              Our Sites
+              Useful Links
             </h3>
             <ul className="mt-4 space-y-3">
               <li>
