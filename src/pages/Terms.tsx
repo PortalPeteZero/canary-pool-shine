@@ -7,6 +7,21 @@ export default function Terms() {
       <Helmet>
         <title>Terms of Service | Canary Detect</title>
         <meta name="description" content="Terms of Service for Canary Detect ECO Finish pool coating services." />
+        <link rel="canonical" href="https://canary-detect-coatings.es/terms" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Terms of Service",
+            "description": "Terms of Service for Canary Detect ECO Finish pool coating services.",
+            "url": "https://canary-detect-coatings.es/terms",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Canary Detect",
+              "url": "https://canary-detect-coatings.es"
+            }
+          })}
+        </script>
       </Helmet>
 
       <section className="py-16 md:py-24">

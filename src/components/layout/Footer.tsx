@@ -133,6 +133,9 @@ export function Footer() {
             © {new Date().getFullYear()} Canary Detect. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-xs text-white/40">
+            <Link to="/process" className="hover:text-white/70 transition-colors">
+              Installation Process
+            </Link>
             <Link to="/privacy-policy" className="hover:text-white/70 transition-colors">
               Privacy Policy
             </Link>

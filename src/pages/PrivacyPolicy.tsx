@@ -7,6 +7,21 @@ export default function PrivacyPolicy() {
       <Helmet>
         <title>Privacy Policy | Canary Detect</title>
         <meta name="description" content="Privacy Policy for Canary Detect ECO Finish pool coating services." />
+        <link rel="canonical" href="https://canary-detect-coatings.es/privacy-policy" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Privacy Policy",
+            "description": "Privacy Policy for Canary Detect ECO Finish pool coating services.",
+            "url": "https://canary-detect-coatings.es/privacy-policy",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Canary Detect",
+              "url": "https://canary-detect-coatings.es"
+            }
+          })}
+        </script>
       </Helmet>
 
       <section className="py-16 md:py-24">
