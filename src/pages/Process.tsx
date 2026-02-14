@@ -52,6 +52,22 @@ export default function Process() {
           name="description" 
           content="Learn how ECO Finish is professionally applied to your pool. Our 4-step process ensures lasting beauty and durability for your Canary Islands pool." 
         />
+        <link rel="canonical" href="https://canary-detect-coatings.es/process" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How ECO Finish Is Applied to Your Pool",
+            "description": "Our 4-step professional installation process for ECO Finish pool coatings in the Canary Islands.",
+            "url": "https://canary-detect-coatings.es/process",
+            "step": [
+              { "@type": "HowToStep", "position": 1, "name": "Surface Preparation", "text": "We thoroughly prepare your pool surface, repairing any damage and creating the ideal base." },
+              { "@type": "HowToStep", "position": 2, "name": "Primer Application", "text": "A specialized bonding primer is applied to ensure maximum adhesion." },
+              { "@type": "HowToStep", "position": 3, "name": "ECO Finish Coating", "text": "Your chosen ECO Finish is expertly applied using a thermal spray process." },
+              { "@type": "HowToStep", "position": 4, "name": "Cure & Fill", "text": "The finish cures naturally, then we carefully fill your pool." }
+            ]
+          })}
+        </script>
       </Helmet>
 
       {/* Hero with image background */}

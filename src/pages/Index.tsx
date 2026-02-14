@@ -52,6 +52,7 @@ export default function Index() {
           name="description" 
           content="Transform your pool with ECO Finish coatings. Canary Detect are specialist installers across all Canary Islands. Beautiful colours, 10+ year durability." 
         />
+        <link rel="canonical" href="https://canary-detect-coatings.es/" />
       </Helmet>
 
       {/* Hero Section - Video Background */}
